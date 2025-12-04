@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion — Esprit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+
+    <!-- HEADER -->
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localisation du Bureau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<header class="w-full bg-[#BEE1E6] shadow-sm">
+    <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+
+        <img src="img/Logo.jpg"
+     alt="Logo Esprit"
+     class="w-[177px] h-[65px] object-contain">
+
+
+        <!-- MENU BURGER (mobile) -->
+        <button id="menuBtn" class="md:hidden text-2xl">
+            ☰
+        </button>
+
+        <!-- NAVIGATION -->
+        <nav id="navMenu"
+             class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="home.html" class="hover:text-teal-600">Home</a>
+            <a href="#" class="hover:text-teal-600">Pages</a>
+            <a href="calenderier.html" class="hover:text-teal-600">Calendrier</a>
+            <a href="maps.html" class="hover:text-teal-600">Maps</a>
+            <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+        </nav>
+
+        <!-- UTILISATEUR (Desktop) -->
+        <div class="hidden md:block font-bold text-sm">
+
+        </div>
+    </div>
+
+    <!-- MENU MOBILE DÉROULANT -->
+    <nav id="mobileMenu"
+         class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm
+font-medium">
+        <a href="home.html" class="hover:text-teal-600">Home</a>
+        <a href="listeDeBureau.html" class="hover:text-teal-600">Pages</a>
+        <a href="calenderier.html" class="hover:text-teal-600">Calendrier</a>
+        <a href="maps.html" class="hover:text-teal-600">Maps</a>
+        <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+
+        <div class="font-bold mt-2"></div>
+    </nav>
+</header>
+
+<!-- SCRIPT MENU MOBILE -->
+<script>
+    const btn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    btn.onclick = () => {
+        mobileMenu.classList.toggle("hidden");
+    };
+</script>
+
+
+    <!-- BANDE BLEUE -->
+    <div class="w-full h-[300px] bg-[#BEE1E6] rounded-b-[90px]"></div>
+
+    <!-- FORMULAIRE LOGIN -->
+    <section class="w-full flex justify-center mt-[-160px]">
+        <div class="w-[800px] bg-white p-12 shadow-lg rounded-[30px]">
+
+            <h2 class="text-center text-3xl font-bold mb-2">Connexion</h2>
+
+            <p class="text-center text-gray-600 text-base mb-8">
+                Accédez à votre compte Esprit et gérez vos services en ligne.
+            </p>
+
+            <form class="space-y-6">
+
+                <!-- Email -->
+                <div>
+                    <label class="block text-gray-800">Email</label>
+                    <input type="email"
+                        class="w-full mt-2 border border-gray-300
+rounded-lg p-3 focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Votre email" required>
+                </div>
+
+                <!-- Mot de passe -->
+                <div>
+                    <label class="block text-gray-800">Mot de passe</label>
+                    <input type="password"
+                        class="w-full mt-2 border border-gray-300
+rounded-lg p-3 focus:ring-2 focus:ring-[#006D77]"
+
+                       placeholder="Votre mot de passe" required>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-[#006D77] hover:bg-[#045159]
+text-white py-3 rounded-lg text-lg font-medium transition">
+                    Se connecter
+                </button>
+            </form>
+
+            <p class="text-center text-gray-700 mt-6 text-sm">
+                Pas encore de compte ?
+                <a href="signup.html" class="text-[#006D77]
+font-medium">Créer un compte</a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+     <!-- FOOTER -->
+
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10
+px-10 text-sm">
+
+            <!-- Col 1 -->
+            <div>
+                <img src="img/pngegg.png" alt="logo" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous<br>
+                    Prenez rendez-vous facilement avec les services de
+l'école : scolarité, orientation,
+                    assistance technique. Gagnez du temps et évitez
+les files d'attente.
+                </p>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d'Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver Un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>
+</html>

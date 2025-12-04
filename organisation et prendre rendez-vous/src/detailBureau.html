@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des bureaux réservés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-gray-800 bg-[#F4FDFF]">
+
+   <!-- HEADER -->
+<!-- HEADER -->
+<header class="w-full bg-[#F4FDFF] border-b border-[#F4FDFF]">
+  <div class="max-w-6xl mx-auto flex items-center px-6 py-4">
+
+    <!-- LOGO (gauche) -->
+    <div class="flex items-center">
+      <img src="img/Logo.jpg" alt="Logo Esprit" class="h-10 object-contain" />
+    </div>
+
+    <!-- MENU DESKTOP (centré) -->
+    <nav
+      id="navMenu"
+      class="hidden md:flex flex-1 justify-center items-center gap-10 text-[15px] font-medium"
+    >
+      <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+      <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+
+      <!-- Pages avec petite flèche ▼ -->
+      <div class="flex items-center gap-1">
+        <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">Pages</a>
+        <span class="text-[10px] -mb-[2px]">▼</span>
+      </div>
+
+      <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+      <a href="maps.html" class="hover:text-[#00A0AC]">Maps</a>
+      <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+    </nav>
+
+    <!-- LOGIN (droite, desktop) -->
+    <button
+      class="hidden md:inline-flex rounded-[999px] bg-[#D8F5FF] px-6 py-2 text-[14px] font-semibold text-slate-900 shadow-sm hover:bg-[#c9f0ff]">
+      Login
+    </button>
+
+    <!-- MENU BURGER (mobile uniquement, à droite) -->
+    <button id="menuBtn" class="md:hidden ml-auto text-2xl">
+      ☰
+    </button>
+  </div>
+
+  <!-- MENU MOBILE DÉROULANT -->
+  <nav
+    id="mobileMenu"
+    class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm font-medium bg-white border-t border-[#E4E4E4]"
+  >
+    <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+    <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+    <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">liste de bureau</a>
+    <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+    <a href="maps.html" class="hover:text-[#00A0AC]">Maps</a>
+    <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+  </nav>
+</header>
+
+<!-- SCRIPT MENU MOBILE -->
+<script>
+  const btn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  btn.onclick = () => {
+    mobileMenu.classList.toggle("hidden");
+  };
+</script>
+
+
+
+    <!-- ESPACEMENT (navbar fixe) -->
+    <div class="h-20"></div>
+
+
+    <!-- ------------------ TITRE ------------------ -->
+    <h1 class="text-center text-3xl font-bold my-10">
+        DÉTAIL DU SERVICE – PRISE DE RENDEZ-VOUS
+    </h1>
+ <div class="h-10"></div>
+
+ <!-- ------------------ SECTION PROFIL + DETAIL ------------------ -->
+<section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-6">
+
+
+    <!-- Photo + grand cadre arrondi Figma -->
+    <div class="bg-[#F1F1F1] rounded-[45px] p-12 flex justify-center items-center shadow-sm">
+        <img src="./img/imageSalim.jpg" class="w-[350px] h-auto rounded-2xl object-cover" alt="Employé">
+    </div>
+
+    <!-- Infos service -->
+    <div class="pt-6">
+        <h2 class="text-2xl font-semibold mb-6">SERVICE : FINANCEMENT ÉTUDIANT</h2>
+
+        <p class="mb-2"><strong>Bloc :</strong> A — Bureau 203</p>
+        <p class="mb-2"><strong>Employé(e) :</strong> Mr salim hizi</p>
+        <p class="mb-2"><strong>Service :</strong> Financement Étudiant</p>
+        <p class="mb-2"><strong>Type de service :</strong> Crédits, attestations, frais de scolarité</p>
+        <p class="mb-2"><strong>Documents à apporter :</strong> CIN, carte étudiant</p>
+        <p class="mb-2"><strong>Disponibilité :</strong> Lundi–Vendredi, 09h–12h / 13h30–16h</p>
+        <p class="mb-2"><strong>Contact :</strong> financement@esprit.tn</p>
+
+        <!-- Étoiles -->
+        <div class="text-[28px] text-red-500 my-5 mb-10">
+            ★★★★☆
+        </div>
+
+        <!-- Boutons -->
+        <div class="flex items-center gap-6 mt-4">
+     <a href="calenderier.html" 
+   class="bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition">
+    Prendre Rendez-Vous
+</a>
+
+
+            <button class="border border-gray-700 px-6 py-3 rounded-xl hover:bg-gray-100 transition">
+                retourner à la liste
+            </button>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- ------------------ DESCRIPTION ------------------ -->
+    <section class="max-w-7xl mx-auto mt-14 px-6">
+
+        <!-- Onglets -->
+        <div class="flex gap-8 border-b pb-2">
+            <button class="font-semibold border-b-2 border-red-500 pb-1">Description</button>
+            <button class="text-gray-600 hover:text-black">Reviews</button>
+        </div>
+
+        <!-- Texte description -->
+        <div class="mt-6 text-[16px] leading-7 text-gray-700">
+
+            <p>
+                Le service Financement Étudiant met à disposition un accompagnement complet pour toutes les démarches
+                liées au financement des études. Les étudiants peuvent déposer une demande de crédit universitaire,
+                obtenir une attestation financière, mettre à jour ou régulariser leur dossier bancaire, ou encore
+                demander des facilités de paiement.
+            </p>
+
+            <p class="mt-4">
+                L’objectif principal du service est de garantir un suivi clair, rapide et transparent, en permettant
+                aux étudiants d’éviter les files d’attente grâce à la prise de rendez-vous en ligne.
+            </p>
+
+            <p class="font-semibold mt-6">Ce que le service peut offrir :</p>
+
+            <ul class="list-disc ml-6 mt-3 space-y-2">
+                <li><strong>Accompagnement pour les crédits étudiants</strong></li>
+                <li><strong>Attestations financières (banques, ambassades, dossiers administratifs)</strong></li>
+                <li><strong>Dossiers de paiement et régularisation</strong></li>
+                <li><strong>Informations sur les facilités & échéanciers</strong></li>
+                <li><strong>Suivi personnalisé selon les besoins de chaque étudiant</strong></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- ------------------ FOOTER F I G M A ------------------ -->
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10
+px-10 text-sm">
+
+            <!-- Col 1 -->
+            <div>
+                <img src="img/Logo.jpg" alt="logo" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous<br>
+                    Prenez rendez-vous facilement avec les services de
+l'école : scolarité, orientation,
+                    assistance technique. Gagnez du temps et évitez
+les files d'attente.
+                </p>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d'Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver Un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>
