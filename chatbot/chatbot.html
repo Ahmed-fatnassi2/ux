@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat — Esprit (maquette)</title>
+
+  <!-- Lien vers ton CSS compilé Tailwind -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Font (si tu veux exactement la même police, change ici si besoin) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html,body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    /* couleurs spécifiques demandées */
+    .msg-student { background: #BEE1E6; }      /* couleur des messages étudiant */
+    .msg-bot     { background: #D7EEF1; }      /* couleur du bot (ajustable) */
+    .bubble-border { border: 2px solid rgba(33,113,181,0.15); } /* bord léger bleu */
+    /* input area style like capture */
+    .message-input { background:#CFEFF2; } /* léger bleu clair */
+    /* footer color */
+    .site-footer { background:#f3f3f3; color:#929292; }
+    /* bouton noir universel */
+    .btn-black { background:#000; color:#fff; }
+    /* arrondis et ombre */
+    .card { border-radius:12px; box-shadow: 0 6px 18px rgba(20,20,20,0.04); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- NAVBAR: logo left, nav centered, profile right -->
+  <header class="w-full bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <img src="images/esprit.png" alt="Esprit" class="h-12 object-contain"/>
+      </div>
+
+      <!-- nav centered -->
+      <nav class="hidden md:flex gap-8 text-sm text-gray-700 font-medium">
+        <a class="hover:underline" href="#">Home</a>
+        <a class="text-teal-600" href="#">Chatboot</a>
+        <a href="#">Pages</a>
+        <a href="#">Blog</a>
+        <a href="#">Maps</a>
+        <a href="#">Calenderier</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button class="px-4 py-2 rounded-md border border-gray-200 bg-teal-100 text-teal-800">Login</button>
+        <!-- avatar top right (optionnel) -->
+        <img src="images/avatar.png" alt="user" class="w-10 h-10 rounded-full object-cover border border-gray-200"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+    <div class="grid grid-cols-12 gap-8">
+
+      <!-- SIDEBAR GAUCHE -->
+      <aside class="col-span-12 md:col-span-4 lg:col-span-3">
+        <div class="card bg-white p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="images/bot.png" alt="Bot" class="w-8 h-8"/>
+            <div>
+              <div class="text-lg font-semibold">Chat</div>
+              <div class="text-xs text-gray-400">Inbox</div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <input placeholder="Search..." class="w-full px-4 py-3 rounded-full border border-gray-200 shadow-sm text-gray-600" />
+          </div>
+
+          <nav class="space-y-3">
+            <button class="w-full text-left px-5 py-3 bg-[#E6F6F8] rounded-md card">Services administratifs</button>
+            <button class="w-full text-left px-5 py-3 bg-[#E6F6F8] rounded-md card">Services d'enseignement</button>
+            <button class="w-full text-left px-5 py-3 bg-[#0f5ea0] text-white rounded-md card">Services numériques</button>
+            <button class="w-full text-left px-5 py-3 bg-[#E6F6F8] rounded-md card">Service financier</button>
+            <button class="w-full text-left px-5 py-3 bg-[#E6F6F8] rounded-md card">Département des stages</button>
+            <button class="w-full text-left px-5 py-3 bg-[#E6F6F8] rounded-md card">Service de vie étudiante</button>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- ZONE PRINCIPALE (centre) -->
+      <section class="col-span-12 md:col-span-8 lg:col-span-6">
+        <div class="card bg-white overflow-hidden">
+
+          <!-- topbar of chat (title) -->
+          <div class="px-6 py-4 border-b border-gray-100 bg-[#DFF4F6]">
+            <div class="text-lg font-semibold">Services numériques</div>
+          </div>
+
+          <!-- chat area -->
+          <div class="px-6 py-6 h-[520px] overflow-y-auto space-y-6" id="chat-body">
+
+            <!-- MESSAGE 1 (bot) -->
+            <div class="flex items-start gap-4">
+              <img src="images/bot.png" alt="bot" class="w-10 h-10 rounded-full" />
+              <div class="flex-1">
+                <div class="inline-block msg-bot bubble-border rounded-lg px-6 py-3 text-gray-800">
+                  Bonjour, comment je peux t'aider ?
+                </div>
+                <div class="text-xs text-gray-400 mt-2">10:13 pm</div>
+              </div>
+            </div>
+
+            <!-- MESSAGE 2 (student) -->
+            <div class="flex items-start gap-4 justify-between">
+              <div class="flex-1">
+                <div class="inline-block msg-student bubble-border rounded-lg px-6 py-4 text-gray-800">
+                  Bonjour, j'ai un problème pour accéder à la plateforme EspritOnline. Quand j'essaie de me connecter, on me dit que mon mot de passe est incorrect.
+                </div>
+                <div class="text-xs text-gray-400 mt-2">10:13 pm</div>
+              </div>
+              <img src="images/etudiant.png" alt="étudiant" class="w-10 h-10 rounded-full ml-4" />
+            </div>
+
+            <!-- MESSAGE 3 (bot) -->
+            <div class="flex items-start gap-4">
+              <img src="images/bot.png" alt="bot" class="w-10 h-10 rounded-full" />
+              <div class="flex-1">
+                <div class="inline-block msg-bot bubble-border rounded-lg px-6 py-3 text-gray-800">
+                  D'accord, peux-tu me donner ton numéro étudiant ?
+                </div>
+                <div class="text-xs text-gray-400 mt-2">10:14 pm</div>
+              </div>
+            </div>
+
+            <!-- MESSAGE 4 (student) -->
+            <div class="flex items-start gap-4 justify-between">
+              <div class="flex-1 text-right">
+                <div class="inline-block msg-student bubble-border rounded-lg px-6 py-4 text-gray-800">
+                  Oui, c'est le 221JMT2319
+                </div>
+                <div class="text-xs text-gray-400 mt-2">10:15 pm</div>
+              </div>
+              <img src="images/etudiant.png" alt="étudiant" class="w-10 h-10 rounded-full ml-4" />
+            </div>
+
+          </div>
+
+          <!-- input area (fixed bottom of card) -->
+          <div class="px-6 py-4 border-t border-gray-100 flex items-center gap-4">
+            <button class="p-2 rounded-full hover:bg-gray-100"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828L20 9.828a4 4 0 00-5.656-5.656L8.464 10.05" /></svg></button>
+
+            <input type="text" placeholder="Write a message..." class="flex-1 rounded-full border-0 px-6 py-4 message-input text-gray-700 focus:outline-none" />
+
+            <button class="ml-2 btn-black rounded-full px-5 py-3 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transform rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Envoyer
+            </button>
+          </div>
+
+        </div>
+
+        <!-- FEEDBACK BOX (comme capture) -->
+        <div class="mt-10 card bg-[#CFEFF2] p-8 mx-auto max-w-2xl text-center">
+          <img src="images/esprit.png" class="mx-auto h-12 object-contain mb-4" alt="esprit"/>
+          <h3 class="text-teal-700 font-semibold mb-4">Share your experience in scaling</h3>
+
+          <textarea placeholder="Add your comments..." class="w-full h-28 p-4 rounded border border-gray-200 resize-none"></textarea>
+
+          <button class="mt-6 btn-black px-8 py-3 rounded-md shadow-sm">Submit</button>
+        </div>
+
+      </section>
+
+      <!-- (right column removed per demande) -->
+      <aside class="hidden lg:block lg:col-span-3">
+        <!-- Zone 'Détails' effacée selon ta demande: laissé vide -->
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer mt-16 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-start gap-12">
+        <div class="w-1/3">
+          <img src="images/esprit.png" alt="esprit" class="h-10 mb-4"/>
+          <p style="color:#929292; font-size:14px; line-height:1.6;">
+            Prenez rendez-vous facilement avec les services de l'école...
+          </p>
+        </div>
+
+        <div class="w-2/3 grid grid-cols-3 gap-6 text-sm" style="color:#929292;">
+          <div>
+            <h4 class="font-semibold text-gray-700 mb-3">À PROPOS</h4>
+            <ul class="space-y-2">
+              <li>Notre Mission</li>
+              <li>À Propos D'Esprit</li>
+              <li>Notre Équipe</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-700 mb-3">DÉCOUVRIR</h4>
+            <ul class="space-y-2">
+              <li>Réserver Un Rendez-Vous</li>
+              <li>Service Orientation</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-700 mb-3">LIENS UTILES</h4>
+            <ul class="space-y-2">
+              <li>Contactez-Nous</li>
+              <li>Avis Et Retours</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-right text-xs" style="color:#929292;">
+        © 2025 Esprit — Tous droits réservés
+      </div>
+    </div>
+  </footer>
+
+  <!-- petite amélioration JS : scroll to bottom -->
+  <script>
+    const body = document.getElementById('chat-body');
+    if (body) body.scrollTop = body.scrollHeight;
+  </script>
+</body>
+</html>

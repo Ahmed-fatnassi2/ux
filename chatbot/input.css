@@ -1,0 +1,65 @@
+/* input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import font (change si tu as une police précise) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --esprit: #bee1e6;    /* couleur pour messages étudiant / zones non sélectionnées */
+  --button-black: #000000;
+  --footer-gray: #929292;
+  --bubble-border: rgba(13,103,146,0.08);
+  --avatar-size: 44px;
+}
+
+/* base tweaks */
+html,body{
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* small helpers to exactly match look */
+.chat-container {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+/* input bubble style */
+.message-bubble {
+  border-radius: 8px;
+  padding: 14px 18px;
+  line-height: 1.5;
+}
+
+/* student bubble color (exact provided) */
+.msg-student {
+  background: var(--esprit);
+  color: #0b3b3f;
+}
+
+/* bot bubble color (white / light blue border) */
+.msg-bot {
+  background: white;
+  border: 1px solid var(--bubble-border);
+  color: #1f2937;
+}
+
+/* send input style like the screenshot */
+.message-input {
+  background: var(--esprit);
+  border-radius: 9999px;
+  padding: 14px 20px;
+}
+
+/* black buttons */
+.btn-black{
+  background: var(--button-black);
+  color: white;
+}
+
+/* footer style */
+.site-footer {
+  background: #f1f1f1;
+  color: var(--footer-gray);
+}
