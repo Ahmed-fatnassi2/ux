@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feedback — Esprit</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html,body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .site-footer { background:#f3f3f3; color:#929292; }
+    .btn-black { background:#000; color:#fff; }
+    .card { border-radius:12px; box-shadow: 0 6px 18px rgba(20,20,20,0.04); }
+  </style>
+</head>
+<body class="bg-gray-50">
+   <!-- HEADER -->
+<!-- HEADER -->
+<header class="w-full bg-white border-b border-[#F4FDFF]">
+  <div class="max-w-6xl mx-auto flex items-center px-6 py-4">
+
+    <!-- LOGO (gauche) -->
+    <div class="flex items-center">
+      <img src="img/Logo.jpg" alt="Logo Esprit" class="h-10 object-contain" />
+    </div>
+
+    <!-- MENU DESKTOP (centré) -->
+    <nav
+      id="navMenu"
+      class="hidden md:flex flex-1 justify-center items-center gap-10 text-[15px] font-medium"
+    >
+      <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+      <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+
+      <!-- Pages avec petite flèche ▼ -->
+      <div class="flex items-center gap-1">
+        <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">Pages</a>
+        <span class="text-[10px] -mb-[2px]">▼</span>
+      </div>
+
+      <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+      <a href="#" class="hover:text-[#00A0AC]">Maps</a>
+      <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+    </nav>
+
+    <!-- LOGIN (droite, desktop) -->
+       <a href="login.html" class="inline-block bg-[#d3eef5] px-6 py-2 rounded-xl text-[13px] text-center">
+    Login
+</a>
+
+    <!-- MENU BURGER (mobile uniquement, à droite) -->
+    <button id="menuBtn" class="md:hidden ml-auto text-2xl">
+      ☰
+    </button>
+  </div>
+
+  <!-- MENU MOBILE DÉROULANT -->
+  <nav
+    id="mobileMenu"
+    class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm font-medium bg-white border-t border-[#E4E4E4]"
+  >
+    <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+    <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+    <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">liste de bureau</a>
+    <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+    <a href="maps.html" class="hover:text-[#00A0AC]">Maps</a>
+    <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+  </nav>
+</header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    
+    <!-- Bouton retour -->
+    <div class="mb-8">
+      <a href="chatboot.html" class="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Retour au chat
+      </a>
+    </div>
+
+    <!-- FEEDBACK BOX -->
+    <div class="card bg-[#CFEFF2] p-12 text-center">
+      <img src="img/esprit.png" class="mx-auto h-16 object-contain mb-6" alt="esprit"/>
+      <h1 class="text-3xl font-bold text-teal-700 mb-3">Partagez votre expérience</h1>
+      <p class="text-teal-600 mb-8">Votre avis nous aide à améliorer notre service de chatbot</p>
+
+      <form class="max-w-2xl mx-auto">
+        <!-- Rating (optionnel) -->
+        <div class="mb-6">
+          <label class="block text-left text-teal-700 font-semibold mb-3">Comment évaluez-vous votre expérience ?</label>
+          <div class="flex justify-center gap-3">
+            <button type="button" class="text-4xl hover:scale-110 transition">😞</button>
+            <button type="button" class="text-4xl hover:scale-110 transition">😐</button>
+            <button type="button" class="text-4xl hover:scale-110 transition">🙂</button>
+            <button type="button" class="text-4xl hover:scale-110 transition">😊</button>
+            <button type="button" class="text-4xl hover:scale-110 transition">🤩</button>
+          </div>
+        </div>
+
+        <!-- Commentaire -->
+        <div class="mb-8">
+          <label class="block text-left text-teal-700 font-semibold mb-3">Vos commentaires</label>
+          <textarea placeholder="Partagez vos commentaires, suggestions ou remarques..." class="w-full h-40 p-4 rounded-lg border border-gray-200 resize-none bg-white focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+        </div>
+
+        <button type="submit" class="btn-black px-12 py-4 rounded-lg shadow-lg hover:bg-gray-800 transition text-lg font-semibold">
+          Envoyer mon avis
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  
+    <!-- ------------------ FOOTER F I G M A ------------------ -->
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10
+px-10 text-sm">
+
+            <!-- Col 1 -->
+            <div>
+                <img src="img/Logo.jpg" alt="logo" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous<br>
+                    Prenez rendez-vous facilement avec les services de
+l'école : scolarité, orientation,
+                    assistance technique. Gagnez du temps et évitez
+les files d'attente.
+                </p>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d'Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver Un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>
+</html>

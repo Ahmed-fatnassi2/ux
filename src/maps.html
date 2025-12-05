@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localisation du Bureau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+
+<img src="img/pngegg.png" alt="Logo Esprit" class="w-[177px] h-auto">
+
+        <button id="menuBtn" class="md:hidden text-2xl">
+            ☰
+        </button>
+
+        <nav id="navMenu" 
+             class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="home.html" class="hover:text-teal-600">Home</a>
+            <a href="#" class="hover:text-teal-600">Pages</a>
+      <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+            <a href="maps.html" class="hover:text-teal-600">Maps</a>
+            <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+        </nav>
+
+        <div class="hidden md:block font-bold text-sm">
+            Maram B.
+        </div>
+    </div>
+
+    <nav id="mobileMenu"
+         class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm font-medium">
+        <a href="home.html" class="hover:text-teal-600">Home</a>
+        <a href="#" class="hover:text-teal-600">Pages</a>
+      <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+        <a href="maps.html" class="hover:text-teal-600">Maps</a>
+        <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+
+        <div class="font-bold mt-2">Maram B.</div>
+    </nav>
+</header>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    btn.onclick = () => {
+        mobileMenu.classList.toggle("hidden");
+    };
+</script>
+
+<div class="w-[85%] mx-auto mt-10">
+
+    <section class="bg-[#CFEFF3] p-8 rounded-[30px] shadow-sm">
+
+        <h2 class="text-2xl font-bold text-[#002B31]">Localisation du Bureau — Carte</h2>
+
+        <p class="text-sm text-gray-600 mt-1">
+            Visualisez facilement l’emplacement du campus Esprit.
+        </p>
+
+        <div class="flex items-center gap-4 mt-6">
+
+            <input type="text"
+                   placeholder="Sélectionnez un bureau pour afficher les informations."
+                   class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#006D77] focus:outline-none shadow-sm">
+
+            <button class="bg-black text-white px-8 py-3 rounded-xl font-medium hover:bg-gray-900 transition">
+                Afficher
+            </button>
+
+        </div>
+
+    </section>
+</div>
+
+
+        <div class="flex justify-center mt-12">
+            <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/3:2/w_1920,c_limit/GoogleMapTA.jpg"
+                 alt="Google Maps"
+                 class="w-full md:w-[85%] rounded-lg shadow-md">
+        </div>
+
+
+<div class="flex justify-center mt-12">
+
+    <div class="w-full md:w-[85%]">
+
+        <div class="bg-[#CFEFF3] p-8 rounded-[30px] shadow-sm flex items-center justify-between">
+
+            <div>
+                <h3 class="font-semibold text-lg text-gray-900">
+                    Bureau 1 — Responsable administratif
+                </h3>
+
+                <p class="text-sm text-gray-700 mt-1">
+                    Bâtiment A, Campus Esprit — El Ghazela — Ariana
+                </p>
+            </div>
+
+            <button class="bg-black text-white px-8 py-3 rounded-xl text-sm hover:bg-gray-800 transition">
+                Itinéraire
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+      
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10 px-10 text-sm">
+
+            <div>
+                <img src="img/pngegg.png" alt="logo" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous<br>
+                    Prenez rendez-vous facilement avec les services de l'école : scolarité, orientation,
+                    assistance technique. Gagnez du temps et évitez les files d'attente.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d'Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver Un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>
+</html>

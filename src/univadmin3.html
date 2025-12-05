@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Décisions & Consultations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'custom-main': '#BEE1E6', // Bleu principal pâle
+                    'custom-accent': '#006D77', // Vert/Teal foncé pour les boutons et bordures principales
+                    'custom-dark-text': '#2A363B', // Texte foncé
+                }
+            }
+        }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+<header class="w-full border-b">
+    <div class="w-full flex items-center justify-between py-5 px-6">
+      
+      <img src="img/pngegg.png" class="w-[177px] h-[65px] object-contain">
+
+      <nav class="flex items-center gap-8 text-[13px]">
+        <a href="home.html" class="font-semibold border-b-2 border-black pb-1">Home</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Pages ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Services</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Réservations</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Maps</a>
+          </div>
+        </div>
+        <a href="chatboot.html">Chatboot</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Blog ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Articles</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Actualités</a>
+          </div>
+        </div>
+
+        <a href="calenderier.html">Calendrier</a>
+      <a href="maps.html">Maps</a>
+        <a href="univadmin5.html">Espace Transparence</a>
+      </nav>
+
+        <a href="login.html" class="inline-block bg-[#d3eef5] px-6 py-2 rounded-xl text-[13px] text-center">
+        Login
+      </a>
+
+    </div>
+    
+  </header>
+
+
+  <div class="container mx-auto p-6">
+    <header class="text-white text-2xl font-bold text-center py-6 rounded-lg bg-custom-accent shadow-lg mb-8">
+      DÉCISIONS ET CONSULTATIONS - UNIVERSITÉ
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-6">
+      <section class="flex-1 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-6 border-b-2 border-custom-accent pb-2 text-custom-accent uppercase">Timeline des décisions</h2>
+
+        <div class="relative pl-6">
+          <div class="absolute left-3 top-0 bottom-0 w-1 bg-custom-accent rounded"></div>
+
+          <div class="mb-8 relative group">
+            <div class="absolute -left-4 top-1 w-4 h-4 border-2 border-custom-accent bg-white rounded-full transition group-hover:scale-125 group-hover:bg-custom-main"></div>
+            <div class="text-sm font-semibold text-custom-accent mb-1">Mars 2024</div>
+            <div class="border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+              <div class="font-bold text-custom-accent mb-1">Budget bibliothèque augmenté</div>
+              <div class="text-gray-600 mb-2">+150 000€ pour de nouvelles ressources numériques.</div>
+              <div class="text-gray-500 mb-2">✅ Approuvé – 82% pour</div>
+              <div class="flex gap-2 mt-2">
+                <button onclick="showDecisionDetails(1)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les détails</button>
+                <button onclick="showTimelineSteps(1)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les étapes</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8 relative group">
+            <div class="absolute -left-4 top-1 w-4 h-4 border-2 border-custom-accent bg-white rounded-full transition group-hover:scale-125 group-hover:bg-custom-main"></div>
+            <div class="text-sm font-semibold text-custom-accent mb-1">Fév 2024</div>
+            <div class="border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+              <div class="font-bold text-custom-accent mb-1">Partenariat international</div>
+              <div class="text-gray-600 mb-2">Accord avec l'Université de Montréal pour échanges étudiants.</div>
+              <div class="text-gray-500 mb-2">🌍 15 places disponibles</div>
+              <div class="flex gap-2 mt-2">
+                <button onclick="showDecisionDetails(2)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les détails</button>
+                <button onclick="showTimelineSteps(2)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les étapes</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-8 relative group">
+            <div class="absolute -left-4 top-1 w-4 h-4 border-2 border-custom-accent bg-white rounded-full transition group-hover:scale-125 group-hover:bg-custom-main"></div>
+            <div class="text-sm font-semibold text-custom-accent mb-1">Jan 2024</div>
+            <div class="border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+              <div class="font-bold text-custom-accent mb-1">Réforme des maquettes</div>
+              <div class="text-gray-600 mb-2">Modernisation des programmes de licence.</div>
+              <div class="text-gray-500 mb-2">🔄 Mise en œuvre – Sept 2024</div>
+              <div class="flex gap-2 mt-2">
+                <button onclick="showDecisionDetails(3)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les détails</button>
+                <button onclick="showTimelineSteps(3)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voir les étapes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex-1 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-6 border-b-2 border-custom-accent pb-2 text-custom-accent uppercase">Consultations et votes</h2>
+
+        <div class="flex flex-col gap-4">
+          <div class="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <div class="font-bold text-custom-accent mb-1">Horaires de la bibliothèque</div>
+            <div class="text-gray-600 mb-2">Faut-il ouvrir le week-end ?</div>
+            <div class="flex gap-2 mt-2">
+              <button onclick="openVoteModal(1)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voter</button>
+              <button onclick="toggleResults(1)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Résultats</button>
+            </div>
+            <div id="results-1" class="hidden mt-3 space-y-2">
+              <div>
+                <div class="flex justify-between text-sm">Oui, samedi <span>42%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:42%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm">Oui, week-end complet <span>35%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:35%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm">Non <span>23%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:23%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <div class="font-bold text-custom-accent mb-1">Aménagement extérieur</div>
+            <div class="text-gray-600 mb-2">Quel type d'espace choisir ?</div>
+            <div class="flex gap-2 mt-2">
+              <button onclick="openVoteModal(2)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Voter</button>
+              <button onclick="toggleResults(2)" class="bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white px-3 py-1 rounded text-sm transition">Résultats</button>
+            </div>
+            <div id="results-2" class="hidden mt-3 space-y-2">
+              <div>
+                <div class="flex justify-between text-sm">Espace vert <span>48%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:48%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm">Terrasse <span>32%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:32%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm">Zone sportive <span>20%</span></div>
+                <div class="h-2 w-full bg-gray-300 rounded">
+                  <div class="h-full bg-gradient-to-r from-custom-accent to-custom-main rounded" style="width:20%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="vote-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex justify-center items-center">
+  <div class="bg-white rounded-xl p-6 w-96 max-w-[90%] shadow-lg">
+    <div class="font-bold text-lg text-center mb-4" id="vote-modal-title">Voter</div>
+    <div class="space-y-3">
+      <label class="flex items-center cursor-pointer"><input type="radio" name="vote" value="oui" class="mr-2">Oui</label>
+      <label class="flex items-center cursor-pointer"><input type="radio" name="vote" value="non" class="mr-2">Non</label>
+      <label class="flex items-center cursor-pointer"><input type="radio" name="vote" value="sans-avis" class="mr-2">Sans avis</label>
+    </div>
+    <div class="flex justify-end gap-2 mt-4">
+      <button onclick="closeVoteModal()" class="px-4 py-2 rounded bg-gray-400 hover:bg-gray-600 text-white">Annuler</button>
+      <button onclick="submitVote()" class="px-4 py-2 rounded bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white transition">Valider</button>
+    </div>
+  </div>
+</div>
+
+<div id="decision-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex justify-center items-center">
+  <div class="bg-white rounded-xl p-6 w-96 max-w-[90%] shadow-lg max-h-[80vh] overflow-y-auto">
+    <div class="font-bold text-lg text-center mb-4" id="decision-modal-title">Détails de la décision</div>
+    <div id="decision-modal-content" class="text-gray-700"></div>
+    <div class="flex justify-end mt-4">
+      <button onclick="closeDecisionModal()" class="px-4 py-2 rounded bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white transition">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<div id="timeline-steps-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex justify-center items-center">
+  <div class="bg-white rounded-xl p-6 w-96 max-w-[90%] shadow-lg overflow-y-auto max-h-[80vh]">
+    <div class="font-bold text-lg text-center mb-4" id="timeline-steps-modal-title">Étapes de la décision</div>
+    <div id="timeline-steps-content" class="space-y-4"></div>
+    <div class="flex justify-end mt-4">
+      <button onclick="closeTimelineStepsModal()" class="px-4 py-2 rounded bg-custom-main text-custom-accent hover:bg-custom-accent hover:text-white transition">Fermer</button>
+    </div>
+  </div>
+</div>
+<footer class="bg-[#DFE0E1] mt-20 py-14">
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-10 px-6 text-[13px]">
+
+      <div>
+        <img src="img/pngegg.png" class="h-12 mb-4">
+        <p class="text-gray-700 leading-relaxed">
+          Prenez rendez-vous avec les services de l’école : scolarité, orientation ou support technique.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">À PROPOS</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Notre Mission</li>
+          <li>> À propos d’Esprit</li>
+          <li>> Notre équipe</li>
+          <li>> Nos Services</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">DÉCOUVRIR</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Réserver un rendez-vous</li>
+          <li>> Orientation & stages</li>
+          <li>> Scolarité & documents</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">LIENS UTILES</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Contactez-nous</li>
+          <li>> Avis et retours</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const decisionDetails = {
+      1: { title: "Budget bibliothèque augmenté", date: "Mars 2024", description: "Augmentation du budget de la bibliothèque de 150 000€.", details: "Cette décision a été approuvée avec 82% des voix. Les fonds seront utilisés pour acquérir de nouvelles bases de données, livres électroniques et ressources multimédias.", impact: "Amélioration de l'accès aux ressources pour tous les étudiants et chercheurs." },
+      2: { title: "Partenariat international", date: "Février 2024", description: "Accord avec l'Université de Montréal pour échanges étudiants.", details: "Ce partenariat permet à 15 étudiants par an de participer à un programme d'échange d'un semestre.", impact: "Enrichissement de l'expérience étudiante et ouverture internationale." },
+      3: { title: "Réforme des maquettes", date: "Janvier 2024", description: "Modernisation des programmes de licence.", details: "Révision complète des programmes de licence avec plus de projets pratiques et d'interdisciplinarité.", impact: "Mise en œuvre prévue pour septembre 2024." }
+    };
+
+    const decisionSteps = {
+      1: [
+        { step:1, title:"Proposition initiale", description:"Demande de budget.", date:"15 Janvier 2024" },
+        { step:2, title:"Étude de faisabilité", description:"Analyse du comité financier.", date:"30 Janvier 2024" },
+        { step:3, title:"Consultation des parties prenantes", description:"Enquête auprès des étudiants.", date:"15 Février 2024" },
+        { step:4, title:"Vote du conseil universitaire", description:"Approuvé avec 82% des voix.", date:"5 Mars 2024" },
+        { step:5, title:"Mise en œuvre", description:"Lancement de l'acquisition des ressources.", date:"20 Mars 2024" }
+      ],
+      2: [
+        { step:1, title:"Premier contact", description:"Contacts avec Montréal.", date:"15 Novembre 2023" },
+        { step:2, title:"Négociations", description:"Réunions entre délégations.", date:"10 Décembre 2023" },
+        { step:3, title:"Rédaction de l'accord", description:"Élaboration du texte final.", date:"15 Janvier 2024" },
+        { step:4, title:"Signature officielle", description:"Cérémonie de signature.", date:"5 Février 2024" },
+        { step:5, title:"Lancement du programme", description:"Ouverture des candidatures.", date:"20 Février 2024" }
+      ],
+      3: [
+        { step:1, title:"Diagnostic initial", description:"Analyse des programmes existants.", date:"15 Octobre 2023" },
+        { step:2, title:"Consultation des enseignants", description:"Réunions avec enseignants.", date:"10 Novembre 2023" },
+        { step:3, title:"Consultation des étudiants", description:"Enquêtes et ateliers.", date:"30 Novembre 2023" },
+        { step:4, title:"Élaboration des nouvelles maquettes", description:"Conception des programmes.", date:"15 Décembre 2023" },
+        { step:5, title:"Validation par le conseil pédagogique", description:"Approbation des nouvelles maquettes.", date:"10 Janvier 2024" },
+        { step:6, title:"Préparation de la mise en œuvre", description:"Formation des enseignants.", date:"30 Janvier 2024" }
+      ]
+    };
+
+    let currentVoteId = null;
+
+    function toggleResults(id) {
+      const results = document.getElementById(`results-${id}`);
+      results.classList.toggle('hidden');
+    }
+
+    function openVoteModal(id) {
+      currentVoteId = id;
+      const modalTitle = document.getElementById('vote-modal-title');
+      modalTitle.textContent = id === 1 ? "Horaires de la bibliothèque" : "Aménagement extérieur";
+      document.getElementById('vote-modal').classList.remove('hidden');
+    }
+
+    function closeVoteModal() {
+      document.getElementById('vote-modal').classList.add('hidden');
+      document.querySelectorAll('input[name="vote"]').forEach(radio => radio.checked = false);
+    }
+
+    function submitVote() {
+      const selectedOption = document.querySelector('input[name="vote"]:checked');
+      if (!selectedOption) {
+        alert('Veuillez sélectionner une option avant de voter.');
+        return;
+      }
+      alert(`Votre vote (${selectedOption.value}) a été enregistré pour la consultation ${currentVoteId === 1 ? "Horaires de la bibliothèque" : "Aménagement extérieur"} !`);
+      closeVoteModal();
+    }
+
+    function showDecisionDetails(id) {
+      const decision = decisionDetails[id];
+      document.getElementById('decision-modal-title').textContent = decision.title;
+      document.getElementById('decision-modal-content').innerHTML = `
+        <p><strong>Date:</strong> ${decision.date}</p>
+        <p><strong>Description:</strong> ${decision.description}</p>
+        <p><strong>Détails:</strong> ${decision.details}</p>
+        <p><strong>Impact:</strong> ${decision.impact}</p>
+      `;
+      document.getElementById('decision-modal').classList.remove('hidden');
+    }
+
+    function closeDecisionModal() {
+      document.getElementById('decision-modal').classList.add('hidden');
+    }
+
+    function showTimelineSteps(id) {
+      const steps = decisionSteps[id];
+      const decision = decisionDetails[id];
+      document.getElementById('timeline-steps-modal-title').textContent = `Étapes: ${decision.title}`;
+      const container = document.getElementById('timeline-steps-content');
+      container.innerHTML = '';
+      steps.forEach(step => {
+        const div = document.createElement('div');
+        div.className = "flex gap-3";
+        div.innerHTML = `
+          <div class="w-6 h-6 bg-custom-accent text-white rounded-full flex items-center justify-center text-xs font-bold">${step.step}</div>
+          <div>
+            <div class="font-bold text-custom-accent">${step.title}</div>
+            <div class="text-gray-600">${step.description}</div>
+            <div class="text-gray-400 text-sm">${step.date}</div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+      document.getElementById('timeline-steps-modal').classList.remove('hidden');
+    }
+
+    function closeTimelineStepsModal() {
+      document.getElementById('timeline-steps-modal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

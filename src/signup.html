@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer un compte — Esprit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+<header class="w-full bg-[#BEE1E6] shadow-sm">
+    <div class="max-w-5xl mx-auto flex items-center justify-between py-4 px-6">
+
+<img src="img/pngegg.png" alt="Logo Esprit" class="w-[177px] h-[65px] object-contain">
+
+        <button id="menuBtn" class="md:hidden text-2xl">
+            ☰
+        </button>
+        <nav id="navMenu" 
+             class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="home.html" class="hover:text-teal-600">Home</a>
+            <a href="#" class="hover:text-teal-600">Pages</a>
+            <a href="calenderier.html" class="hover:text-teal-600">Calendrier</a>
+            <a href="maps.html" class="hover:text-teal-600">Maps</a>
+            <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+        </nav>
+
+        <div class="hidden md:block font-bold text-sm">
+           
+        </div>
+    </div>
+
+    <nav id="mobileMenu"
+         class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm font-medium">
+        <a href="#" class="hover:text-teal-600">Home</a>
+        <a href="#" class="hover:text-teal-600">Pages</a>
+        <a href="#" class="hover:text-teal-600">Calendrier</a>
+        <a href="#" class="hover:text-teal-600">Maps</a>
+        <a href="#" class="hover:text-teal-600">Espace Transparence</a>
+
+        <div class="font-bold mt-2"></div>
+    </nav>
+</header>
+
+<script>
+    const btn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    btn.onclick = () => {
+        mobileMenu.classList.toggle("hidden");
+    };
+</script>
+
+        <div class="hidden md:block w-24"></div>
+
+      
+    <div class="w-full h-[300px] bg-[#BEE1E6] rounded-b-[90px]"></div>
+
+    <section class="w-full flex justify-center mt-[-160px]">
+        <div class="w-[800px] bg-white shadow-lg rounded-[30px] p-12">
+
+            <h1 class="text-center text-3xl font-bold mb-2">Créer un compte</h1>
+
+            <p class="text-center text-gray-600 text-base mb-8">
+                Rejoignez la plateforme Esprit et accédez aux services en ligne.
+            </p>
+
+            <form class="space-y-6">
+
+                <div>
+                    <label class="block text-gray-800">Nom complet</label>
+                    <input type="text"
+                        class="w-full mt-2 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Nom complet">
+                </div>
+
+                <div>
+                    <label class="block text-gray-800">Email</label>
+                    <input type="email"
+                        class="w-full mt-2 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Email">
+                </div>
+
+                <div>
+                    <label class="block text-gray-800">Téléphone</label>
+                    <input type="text"
+                        class="w-full mt-2 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Téléphone">
+                </div>
+
+                <div>
+                    <label class="block text-gray-800">Mot de passe</label>
+                    <input type="password"
+                        class="w-full mt-2 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Mot de passe">
+                </div>
+
+                <div>
+                    <label class="block text-gray-800">Confirmer le mot de passe</label>
+                    <input type="password"
+                        class="w-full mt-2 border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#006D77]"
+                        placeholder="Confirmer le mot de passe">
+                </div>
+
+                <button type="button" onclick="window.location.href='login.html'"
+        class="w-full bg-[#006D77] hover:bg-[#045159] text-white py-3 rounded-lg text-lg font-medium transition">
+    Créer mon compte
+</button>
+            </form>
+
+            <p class="text-center text-gray-700 mt-6 text-sm">
+                Vous avez déjà un compte ?
+                <a href="login.html" class="text-[#006D77] font-medium">Se connecter</a>
+            </p>
+
+        </div>
+    </section>
+
+
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10 px-10 text-sm">
+
+            <div>
+                <img src="img/pngegg.png" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous — Prenez facilement vos rendez-vous avec les services :
+                    scolarité, orientation, assistance technique, documents administratifs.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d’Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>
+
+</html>
