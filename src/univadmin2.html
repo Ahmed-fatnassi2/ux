@@ -21,6 +21,45 @@
 </head>
 <body class="bg-gray-100 text-gray-900 font-sans">
 
+<header class="w-full border-b">
+    <div class="w-full flex items-center justify-between py-5 px-6">
+      
+      <img src="img/pngegg.png" class="w-[177px] h-[65px] object-contain">
+
+      <nav class="flex items-center gap-8 text-[13px]">
+        <a href="home.html" class="font-semibold border-b-2 border-black pb-1">Home</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Pages ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Services</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Réservations</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Maps</a>
+          </div>
+        </div>
+        <a href="chatboot.html">Chatboot</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Blog ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Articles</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Actualités</a>
+          </div>
+        </div>
+
+        <a href="calenderier.html">Calendrier</a>
+      <a href="maps.html">Maps</a>
+        <a href="univadmin5.html">Espace Transparence</a>
+      </nav>
+
+        <a href="login.html" class="inline-block bg-[#d3eef5] px-6 py-2 rounded-xl text-[13px] text-center">
+        Login
+      </a>
+
+    </div>
+    
+  </header>
+
 <div class="max-w-7xl mx-auto p-5">
 
     <header class="flex justify-between items-center p-5 mb-6 rounded-lg bg-custom-main text-custom-dark-text shadow-lg border-b-2 border-custom-accent">
@@ -220,7 +259,45 @@
     </div>
 
 </div>
+<footer class="bg-[#DFE0E1] mt-20 py-14">
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-10 px-6 text-[13px]">
 
+      <div>
+        <img src="img/pngegg.png" class="h-12 mb-4">
+        <p class="text-gray-700 leading-relaxed">
+          Prenez rendez-vous avec les services de l’école : scolarité, orientation ou support technique.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">À PROPOS</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Notre Mission</li>
+          <li>> À propos d’Esprit</li>
+          <li>> Notre équipe</li>
+          <li>> Nos Services</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">DÉCOUVRIR</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Réserver un rendez-vous</li>
+          <li>> Orientation & stages</li>
+          <li>> Scolarité & documents</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">LIENS UTILES</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Contactez-nous</li>
+          <li>> Avis et retours</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
 <script>
     function showTimeline(requestType) {
         document.querySelectorAll('.timeline-container').forEach(el => el.classList.add('hidden'));

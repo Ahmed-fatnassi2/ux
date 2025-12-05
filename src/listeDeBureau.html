@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des bureaux réservés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-gray-800 bg-[#F4FDFF]">
+
+   <!-- HEADER -->
+<!-- HEADER -->
+<header class="w-full bg-[#F4FDFF] border-b border-[#F4FDFF]">
+  <div class="max-w-6xl mx-auto flex items-center px-6 py-4">
+
+    <!-- LOGO (gauche) -->
+    <div class="flex items-center">
+      <img src="img/Logo.jpg" alt="Logo Esprit" class="h-10 object-contain" />
+    </div>
+
+    <!-- MENU DESKTOP (centré) -->
+    <nav
+      id="navMenu"
+      class="hidden md:flex flex-1 justify-center items-center gap-10 text-[15px] font-medium"
+    >
+      <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+      <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+
+      <!-- Pages avec petite flèche ▼ -->
+      <div class="flex items-center gap-1">
+        <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">Pages</a>
+        <span class="text-[10px] -mb-[2px]">▼</span>
+      </div>
+
+      <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+      <a href="maps.html" class="hover:text-[#00A0AC]">Maps</a>
+      <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+    </nav>
+
+    <!-- LOGIN (droite, desktop) -->
+    <button
+      class="hidden md:inline-flex rounded-[999px] bg-[#D8F5FF] px-6 py-2 text-[14px] font-semibold text-slate-900 shadow-sm hover:bg-[#c9f0ff]">
+      Login
+    </button>
+
+    <!-- MENU BURGER (mobile uniquement, à droite) -->
+    <button id="menuBtn" class="md:hidden ml-auto text-2xl">
+      ☰
+    </button>
+  </div>
+
+  <!-- MENU MOBILE DÉROULANT -->
+  <nav
+    id="mobileMenu"
+    class="md:hidden hidden flex flex-col gap-3 px-6 pb-4 text-sm font-medium bg-white border-t border-[#E4E4E4]"
+  >
+    <a href="home.html" class="hover:text-[#00A0AC]">Home</a>
+    <a href="chatboot.html" class="hover:text-[#00A0AC]">Chatboot</a>
+    <a href="listeDeBureau.html" class="hover:text-[#00A0AC]">liste de bureau</a>
+    <a href="#" class="hover:text-[#00A0AC]">Blog</a>
+    <a href="maps.html" class="hover:text-[#00A0AC]">Maps</a>
+    <a href="calenderier.html" class="hover:text-[#00A0AC]">Calendrier</a>
+  </nav>
+</header>
+
+<!-- SCRIPT MENU MOBILE -->
+<script>
+  const btn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  btn.onclick = () => {
+    mobileMenu.classList.toggle("hidden");
+  };
+</script>
+
+
+<!-- SCRIPT MENU MOBILE -->
+
+
+  <!-- MAIN -->
+ <main class="max-w-[1200px] mx-auto px-6 pt-10 pb-16 flex flex-col md:flex-row">
+
+    <!-- COLONNE GAUCHE : FILTRES -->
+    <aside class="hidden md:block w-[260px] pr-10 border-r border-[#E2E2E2]">
+
+
+      <h2 class="text-[18px] font-semibold mb-6">Filters</h2>
+
+      <!-- Filtres appliqués -->
+      <div class="mb-8">
+        <p class="text-[11px] uppercase tracking-wide text-[#777] mb-3">Filtres appliqués</p>
+
+        <div class="flex flex-wrap gap-2 text-[11px]">
+          <span
+            class="inline-flex items-center gap-1 rounded-[2px] bg-[#F7F7F7] border border-[#E1E1E1] px-2 py-[3px]"
+          >
+            All
+            <span class="text-[10px] text-[#777]">✕</span>
+          </span>
+
+          <span
+            class="inline-flex items-center gap-1 rounded-[2px] bg-[#F7F7F7] border border-[#E1E1E1] px-2 py-[3px]"
+          >
+            Finance
+            <span class="text-[10px] text-[#777]">✕</span>
+          </span>
+
+          <span
+            class="inline-flex items-center gap-1 rounded-[2px] bg-[#F7F7F7] border border-[#E1E1E1] px-2 py-[3px]"
+          >
+            étudiant
+            <span class="text-[10px] text-[#777]">✕</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Category -->
+  <div>
+    <p class="text-[11px] uppercase tracking-wide text-[#777] mb-3">Category</p>
+
+    <div class="flex flex-col gap-2 text-[13px]">
+
+        <label class="inline-flex items-center gap-2">
+            <input type="checkbox" checked
+                   class="h-[13px] w-[13px] border border-[#000] accent-black" />
+            <span>All</span>
+        </label>
+
+        <label class="inline-flex items-center gap-2">
+            <input type="checkbox" checked
+                   class="h-[13px] w-[13px] border border-[#000] accent-black" />
+            <span>etudiant</span>
+        </label>
+
+        <label class="inline-flex items-center gap-2">
+            <input type="checkbox"
+                   class="h-[13px] w-[13px] border border-[#000] accent-black" />
+            <span>Finance</span>
+        </label>
+
+    </div>
+</div>
+
+    </aside>
+
+    <!-- COLONNE DROITE : CONTENU -->
+    <section class="flex-1 pl-10">
+
+      <!-- Search + Organiser -->
+      <div class="flex items-start justify-between mb-10">
+
+        <!-- Barre de recherche -->
+        <div class="flex-1 max-w-[520px]">
+          <div
+            class="flex items-center rounded-[20px] bg-white/70 border border-transparent px-6 py-3 shadow-[0_0_0_1px_rgba(0,0,0,0.03)]"
+          >
+            <input
+              type="text"
+              class="flex-1 bg-transparent text-[13px] focus:outline-none"
+              placeholder=""
+            />
+            <div class="flex items-center gap-3 text-[16px] text-[#444]">
+              <button>&times;</button>
+              <button>🔍</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Organiser par -->
+   <!-- Organiser par -->
+<!-- Organiser par -->
+<div class="relative -ml-6">
+
+  <button
+    class="inline-flex items-center gap-2 rounded-[14px] border border-[#1A1A1A] bg-[#E9E9E9] px-5 py-2 text-[14px] font-medium shadow-sm"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+      stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 6h18"></path>
+      <path d="M7 12h14"></path>
+      <path d="M11 18h10"></path>
+    </svg>
+
+    <span>organiser par</span>
+  </button>
+
+  <!-- Menu déroulant -->
+  <div class="absolute right-0 w-[220px] mt-3 flex flex-col gap-1">
+
+    <div
+      class="rounded-[14px] bg-[#E9E9E9] px-6 py-3 text-[13px] font-medium text-slate-900 shadow-md border border-[#E5E3E2]"
+    >
+      alphabétique, de A à Z
+    </div>
+
+    <div
+      class="rounded-[14px] bg-[#E9E9E9] px-6 py-3 text-[13px] font-medium text-slate-900 shadow-md border border-[#E5E3E2]"
+    >
+      alphabétique, de Z à A
+    </div>
+
+  </div>
+
+</div>
+
+
+      </div>
+
+      <!-- GRID 3x2 DES CARTES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+
+
+        <!-- TEMPLATE CARTE -->
+        <!-- 1 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px] "
+          >
+            <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px]"
+          >
+         <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px] "
+          >
+          <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px] "
+          >
+      <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px] "
+          >
+      <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="w-[235px]">
+          <div
+            class="mx-auto mb-4 flex h-[220px] w-[205px] items-center justify-center rounded-[26px] "
+          >
+            <img
+              src="./img/imageSalim.jpg"
+              alt="Mr Salim hizi"
+              class="h-[220px] w-[205px] object-cover rounded-[22px]"
+            />
+          </div>
+
+          <h3 class="text-[13px] font-semibold leading-snug mb-1">
+            Responsable service client
+          </h3>
+          <p class="text-[12px] text-[#555] mb-1">Mr Salim hizi</p>
+
+          <div class="flex items-center text-[11px] text-[#777] mb-1">
+            <span class="text-[#F5B400] mr-1">★</span>
+            <span class="mr-1">5.0</span>
+            <span>(10 Reviews)</span>
+            <span class="ml-auto text-[11px] text-[#666]">Bloc A</span>
+          </div>
+
+          <p class="text-[11px] text-[#555] mb-3">disponible de 8 à 5</p>
+
+          <div class="flex items-center gap-3">
+<a 
+  href="detailBureau.html"
+  class="flex-1 rounded-[13px] bg-[#151515] px-4 py-2 text-[12px] font-semibold text-white text-center block"
+>
+  Détail Bureau
+</a>
+
+            <button
+              class="inline-flex h-8 w-8 items-center justify-center rounded-[4px] border border-[#E3E3E3] bg-white"
+            >
+              <span class="text-[20px]">♡</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- PAGINATION -->
+     <div class="mt-12 flex items-center justify-between flex-wrap gap-4 md:gap-0">
+
+    <div class="flex-1"></div>
+
+    <button
+      class="rounded-[11px] border border-[#151515] bg-white px-8 py-2 text-[13px] font-medium shadow-sm"
+    >
+      Next Page →
+    </button>
+
+    <div class="flex-1 flex items-center justify-end gap-3 text-[12px]">
+      <div class="h-9 w-10 rounded-[4px] bg-gray-100 border border-[#E3E3E3] flex items-center justify-center">
+        01
+      </div>
+      <span class="text-[#777]">of 10</span>
+      <button
+        class="h-9 w-9 rounded-[4px] bg-gray-100 border border-[#E3E3E3] flex items-center justify-center text-[20px]"
+      >
+        ‹
+      </button>
+      <button
+        class="h-9 w-9 rounded-[4px] bg-gray-100 border border-[#E3E3E3] flex items-center justify-center text-[20px]"
+      >
+        ›
+      </button>
+    </div>
+
+</div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+     <!-- FOOTER -->
+    <footer class="w-full bg-gray-100 mt-20 py-14">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-4 gap-10
+px-10 text-sm">
+
+            <!-- Col 1 -->
+            <div>
+                <img src="img/Logo.jpg" alt="logo" class="h-12 mb-3">
+                <p class="text-gray-700 leading-6 text-xs">
+                    Esprit Rendez-vous<br>
+                    Prenez rendez-vous facilement avec les services de
+l'école : scolarité, orientation,
+                    assistance technique. Gagnez du temps et évitez
+les files d'attente.
+                </p>
+            </div>
+
+            <!-- Col 2 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">A PROPOS</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Notre Mission</li>
+                    <li>A Propos d'Esprit</li>
+                    <li>Notre Équipe</li>
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">DÉCOUVRIR</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Réserver Un Rendez-Vous</li>
+                    <li>Service Orientation & Stages</li>
+                    <li>Scolarité & Documents</li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div>
+                <h4 class="font-semibold mb-3 text-black">LIENS UTILES</h4>
+                <ul class="space-y-2 text-gray-700">
+                    <li>Contactez-Nous</li>
+                    <li>Avis & Retours</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-gray-500 text-sm mt-10">
+            © Esprit 2025 — Plateforme Étudiant
+        </p>
+    </footer>
+
+</body>

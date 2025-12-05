@@ -9,10 +9,49 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <div class="container mx-auto p-4">
+   <div class="container mx-auto p-4">
+
+     <header class="w-full border-b">
+    <div class="w-full flex items-center justify-between py-5 px-6">
+      
+      <img src="img/pngegg.png" class="w-[177px] h-[65px] object-contain">
+
+      <nav class="flex items-center gap-8 text-[13px]">
+        <a href="home.html" class="font-semibold border-b-2 border-black pb-1">Home</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Pages ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Services</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Réservations</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Maps</a>
+          </div>
+        </div>
+        <a href="chatboot.html">Chatboot</a>
+
+        <div class="relative group">
+          <button class="flex items-center gap-1">Blog ▾</button>
+          <div class="absolute hidden group-hover:block bg-white shadow p-3 rounded-md w-40 mt-2">
+            <a class="block px-3 py-2 hover:bg-gray-100">Articles</a>
+            <a class="block px-3 py-2 hover:bg-gray-100">Actualités</a>
+          </div>
+        </div>
+
+        <a href="calenderier.html">Calendrier</a>
+      <a href="maps.html">Maps</a>
+        <a href="univadmin5.html">Espace Transparence</a>
+      </nav>
+
+        <a href="login.html" class="inline-block bg-[#d3eef5] px-6 py-2 rounded-xl text-[13px] text-center">
+        Login
+      </a>
+
+    </div>
+    
+  </header>
 
     <!-- Header -->
-    <header class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-gray-300 mb-6">
+    <!-- <header class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-gray-300 mb-6">
       <div class="text-xl font-bold text-[#5D8AA8] mb-2 md:mb-0">UNIV ADMIN</div>
       <nav>
         <ul class="flex gap-4 text-gray-700 text-sm">
@@ -21,9 +60,12 @@
           <li><a href="#" class="hover:text-[#5D8AA8]"><i class="fas fa-chart-bar"></i> Stats</a></li>
         </ul>
       </nav>
-    </header>
+    </header> -->
 
     <!-- Service Header -->
+  </br>
+  </br>
+  </br>
     <section class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
       <h1 class="text-2xl font-bold text-[#5D8AA8]">Service Scolarité</h1>
       <div id="badge-button" class="flex items-center gap-2 bg-gray-200 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-300">
@@ -179,54 +221,92 @@
 
     <!-- Badges Modal -->
     <div id="badges-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div class="bg-white rounded-xl max-w-lg w-full shadow-lg overflow-y-auto">
-        <div class="flex justify-between items-center p-6 bg-gradient-to-r from-[#5D8AA8] to-[#4A7899] text-white rounded-t-xl">
-          <h2 class="text-xl font-semibold flex items-center gap-2"><i class="fas fa-trophy"></i> Système de Badges - Transparence</h2>
-          <button id="close-modal" class="text-2xl font-bold hover:scale-110 transition-transform">&times;</button>
-        </div>
-        <div class="p-6 space-y-6">
-          <p>Les badges récompensent les services administratifs selon leur performance en matière de transparence et de respect des délais. Chaque niveau représente un engagement croissant envers l'excellence du service.</p>
-          <div class="grid gap-4">
-            <!-- Argent -->
-            <div class="flex items-center gap-4 p-4 border rounded-lg bg-[#F0F7FF] border-[#5D8AA8] relative">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-300 text-gray-700 text-2xl">
-                <i class="fas fa-award"></i>
-              </div>
-              <div>
-                <div class="font-semibold text-lg">Badge Argent</div>
-                <div class="text-gray-600 text-sm">Récompense les services qui maintiennent une transparence constante et respectent plus de 75% de leurs engagements dans les délais impartis.</div>
-                <div class="text-[#5D8AA8] font-medium text-sm mt-1">✓ 75-89% des engagements respectés</div>
-              </div>
-              <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">✓ Actuel</div>
-            </div>
-            <!-- Or -->
-            <div class="flex items-center gap-4 p-4 border rounded-lg">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-yellow-300 text-yellow-800 text-2xl"><i class="fas fa-crown"></i></div>
-              <div>
-                <div class="font-semibold text-lg">Badge Or</div>
-                <div class="text-gray-600 text-sm">Niveau d'excellence suprême pour les services dépassant 90% de respect des délais avec une transparence totale.</div>
-                <div class="text-yellow-700 font-medium text-sm mt-1">✓ 90%+ des engagements respectés</div>
-              </div>
-            </div>
-            <!-- Bronze -->
-            <div class="flex items-center gap-4 p-4 border rounded-lg">
-              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-orange-300 text-orange-800 text-2xl"><i class="fas fa-medal"></i></div>
-              <div>
-                <div class="font-semibold text-lg">Badge Bronze</div>
-                <div class="text-gray-600 text-sm">Niveau de base pour les services qui commencent leur parcours de transparence et respectent au moins 50% de leurs engagements.</div>
-                <div class="text-orange-700 font-medium text-sm mt-1">✓ 50-74% des engagements respectés</div>
-              </div>
-            </div>
+  <div class="bg-white rounded-xl max-w-lg w-full shadow-lg overflow-y-auto max-h-[70vh]"> <!-- Ajout de max-h-[70vh] -->
+    <div class="flex justify-between items-center p-6 bg-gradient-to-r from-[#5D8AA8] to-[#4A7899] text-white rounded-t-xl sticky top-0 z-10"> <!-- Ajout de sticky -->
+      <h2 class="text-xl font-semibold flex items-center gap-2"><i class="fas fa-trophy"></i> Système de Badges - Transparence</h2>
+      <button id="close-modal" class="text-2xl font-bold hover:scale-110 transition-transform">&times;</button>
+    </div>
+    <div class="p-6 space-y-6 overflow-y-auto"> <!-- Ajout de overflow-y-auto -->
+      <p>Les badges récompensent les services administratifs selon leur performance en matière de transparence et de respect des délais. Chaque niveau représente un engagement croissant envers l'excellence du service.</p>
+      <div class="grid gap-4">
+        <!-- Argent -->
+        <div class="flex items-center gap-4 p-4 border rounded-lg bg-[#F0F7FF] border-[#5D8AA8] relative">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-300 text-gray-700 text-2xl">
+            <i class="fas fa-award"></i>
           </div>
-          <div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">
-            <strong>Votre progression :</strong> Le Service Scolarité est actuellement au niveau Argent. Pour atteindre le niveau Or, maintenez un taux de satisfaction supérieur à 90% pendant 3 mois consécutifs.
+          <div>
+            <div class="font-semibold text-lg">Badge Argent</div>
+            <div class="text-gray-600 text-sm">Récompense les services qui maintiennent une transparence constante et respectent plus de 75% de leurs engagements dans les délais impartis.</div>
+            <div class="text-[#5D8AA8] font-medium text-sm mt-1">✓ 75-89% des engagements respectés</div>
+          </div>
+          <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">✓ Actuel</div>
+        </div>
+        <!-- Or -->
+        <div class="flex items-center gap-4 p-4 border rounded-lg">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center bg-yellow-300 text-yellow-800 text-2xl"><i class="fas fa-crown"></i></div>
+          <div>
+            <div class="font-semibold text-lg">Badge Or</div>
+            <div class="text-gray-600 text-sm">Niveau d'excellence suprême pour les services dépassant 90% de respect des délais avec une transparence totale.</div>
+            <div class="text-yellow-700 font-medium text-sm mt-1">✓ 90%+ des engagements respectés</div>
+          </div>
+        </div>
+        <!-- Bronze -->
+        <div class="flex items-center gap-4 p-4 border rounded-lg">
+          <div class="w-16 h-16 rounded-full flex items-center justify-center bg-orange-300 text-orange-800 text-2xl"><i class="fas fa-medal"></i></div>
+          <div>
+            <div class="font-semibold text-lg">Badge Bronze</div>
+            <div class="text-gray-600 text-sm">Niveau de base pour les services qui commencent leur parcours de transparence et respectent au moins 50% de leurs engagements.</div>
+            <div class="text-orange-700 font-medium text-sm mt-1">✓ 50-74% des engagements respectés</div>
           </div>
         </div>
       </div>
+      <div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">
+        <strong>Votre progression :</strong> Le Service Scolarité est actuellement au niveau Argent. Pour atteindre le niveau Or, maintenez un taux de satisfaction supérieur à 90% pendant 3 mois consécutifs.
+      </div>
     </div>
+  </div>
+</div>
 
   </div>
+<footer class="bg-[#DFE0E1] mt-20 py-14">
+    <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-10 px-6 text-[13px]">
 
+      <div>
+        <img src="img/pngegg.png" class="h-12 mb-4">
+        <p class="text-gray-700 leading-relaxed">
+          Prenez rendez-vous avec les services de l’école : scolarité, orientation ou support technique.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">À PROPOS</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Notre Mission</li>
+          <li>> À propos d’Esprit</li>
+          <li>> Notre équipe</li>
+          <li>> Nos Services</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">DÉCOUVRIR</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Réserver un rendez-vous</li>
+          <li>> Orientation & stages</li>
+          <li>> Scolarité & documents</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">LIENS UTILES</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>> Contactez-nous</li>
+          <li>> Avis et retours</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
   <script>
     // Badge Modal
     const badgeButton = document.getElementById('badge-button');
