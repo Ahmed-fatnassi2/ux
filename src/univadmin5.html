@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil ESPRIT - Plateforme de Transparence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'custom-main': '#BEE1E6', // Bleu principal pâle (pour fonds clairs)
+                    'custom-accent': '#006D77', // Vert/Teal foncé principal (pour accents)
+                    'custom-dark-text': '#2A363B', // Texte foncé / Accent foncé 3
+                    'custom-light-accent': '#D3F9FF', // Base de #D3F9FFA6 (très pâle, non utilisé directement pour le texte/icône)
+                    'custom-gray-accent': '#5E7A8A', // Gris foncé/bleuté (Accent foncé 2)
+                    'custom-darker-accent': '#004D55', // Teal plus foncé (Accent foncé 4 pour distinction)
+                }
+            }
+        }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 text-gray-900 font-sans">
+
+  <header class="sticky top-0 z-50 bg-custom-main shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center gap-3 text-custom-dark-text font-black text-2xl uppercase bg-custom-accent/20 px-4 py-2 rounded-lg">
+        <i class="fas fa-university"></i> ESPRIT
+      </div>
+      <nav class="hidden md:flex gap-6">
+        <a href="#transparence-suivi" class="relative text-custom-dark-text font-medium hover:text-custom-accent transition group">Transparence et suivi
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-accent transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#donnees-performance" class="relative text-custom-dark-text font-medium hover:text-custom-accent transition group">Données et performances
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-accent transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#engagement" class="relative text-custom-dark-text font-medium hover:text-custom-accent transition group">Mur d'engagements
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-accent transition-all group-hover:w-full"></span>
+        </a>
+        <a href="#desinformation" class="relative text-custom-dark-text font-medium hover:text-custom-accent transition group">Lutte contre la désinformation
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-custom-accent transition-all group-hover:w-full"></span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-banner relative bg-custom-main text-custom-dark-text text-center py-32 px-6 rounded-b-3xl shadow-lg mb-16 overflow-hidden">
+    <h1 class="text-4xl md:text-5xl font-light mb-4 drop-shadow-md">Plateforme de Transparence et de Dialogue</h1>
+    <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90 font-light">Accédez à l'information, suivez les décisions et participez à la vie de votre faculté.</p>
+  </section>
+
+  <div class="container mx-auto px-6">
+
+    <h2 class="text-3xl md:text-4xl font-medium text-center text-custom-dark-text relative mb-12 after:content-[''] after:block after:w-20 after:h-1 after:rounded after:mx-auto after:mt-4 after:bg-custom-accent">Nos fonctionnalités principales</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+      <div class="feature-block relative bg-white rounded-2xl p-10 text-center shadow-md hover:shadow-xl transition-transform hover:-translate-y-2 border-t-4 border-custom-accent">
+        <i class="fas fa-eye text-5xl text-custom-accent mb-6 block"></i>
+        <h3 class="text-xl font-semibold text-custom-accent mb-4">Transparence et suivi</h3>
+        <p class="text-gray-600 mb-6">Suivez l'état de vos dossiers et accédez aux justifications des décisions (Boîte noire numérique).</p>
+        <a href="univadmin2.html" class="inline-block text-white font-semibold px-6 py-2 rounded-full bg-gradient-to-br from-custom-accent to-custom-accent/80 shadow-md hover:shadow-lg hover:-translate-y-1 transition">Explorer la section &rarr;</a>
+      </div>
+
+      <div class="feature-block relative bg-white rounded-2xl p-10 text-center shadow-md hover:shadow-xl transition-transform hover:-translate-y-2 border-t-4 border-custom-gray-accent">
+        <i class="fas fa-chart-bar text-5xl text-custom-gray-accent mb-6 block"></i>
+        <h3 class="text-xl font-semibold text-custom-gray-accent mb-4">Données et performances publiques</h3>
+        <p class="text-gray-600 mb-6">Consultez les indicateurs officiels, les statistiques de délais et les badges de transparence de la faculté.</p>
+        <a href="index.html" class="inline-block text-white font-semibold px-6 py-2 rounded-full bg-gradient-to-br from-custom-gray-accent to-custom-gray-accent/80 shadow-md hover:shadow-lg hover:-translate-y-1 transition">Consulter les données &rarr;</a>
+      </div>
+
+      <div class="feature-block relative bg-white rounded-2xl p-10 text-center shadow-md hover:shadow-xl transition-transform hover:-translate-y-2 border-t-4 border-custom-dark-text">
+        <i class="fas fa-bullhorn text-5xl text-custom-dark-text mb-6 block"></i>
+        <h3 class="text-xl font-semibold text-custom-dark-text mb-4">Mur d'engagements</h3>
+        <p class="text-gray-600 mb-6">Vérifiez l'avancement des promesses de la direction et participez aux consultations citoyennes.</p>
+        <a href="univadmin4.html" class="inline-block text-white font-semibold px-6 py-2 rounded-full bg-gradient-to-br from-custom-dark-text to-custom-dark-text/80 shadow-md hover:shadow-lg hover:-translate-y-1 transition">Voir les engagements &rarr;</a>
+      </div>
+
+      <div class="feature-block relative bg-white rounded-2xl p-10 text-center shadow-md hover:shadow-xl transition-transform hover:-translate-y-2 border-t-4 border-custom-darker-accent">
+        <i class="fas fa-comments text-5xl text-custom-darker-accent mb-6 block"></i>
+        <h3 class="text-xl font-semibold text-custom-darker-accent mb-4">Lutte contre la désinformation</h3>
+        <p class="text-gray-600 mb-6">Séparez les rumeurs des faits vérifiés grâce aux sources officielles de l'administration.</p>
+        <a href="univadmin3.html" class="inline-block text-white font-semibold px-6 py-2 rounded-full bg-gradient-to-br from-custom-darker-accent to-custom-darker-accent/80 shadow-md hover:shadow-lg hover:-translate-y-1 transition">Vérifier une rumeur &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="bg-gradient-to-br from-custom-accent to-custom-accent/90 text-white py-12 mt-16">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-2xl font-black">ESPRIT</div>
+      <div class="flex gap-6 flex-wrap justify-center md:justify-start">
+        <a href="#" class="hover:text-white/90 transition">À propos</a>
+        <a href="#" class="hover:text-white/90 transition">Contact</a>
+        <a href="#" class="hover:text-white/90 transition">Mentions légales</a>
+        <a href="#" class="hover:text-white/90 transition">Accessibilité</a>
+      </div>
+    </div>
+    <div class="text-center text-white/70 mt-6 text-sm">&copy; 2024 ESPRIT - Tous droits réservés</div>
+  </footer>
+
+</body>
+</html>

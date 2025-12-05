@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Scolarité - Université</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="container mx-auto p-4">
+
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-gray-300 mb-6">
+      <div class="text-xl font-bold text-[#5D8AA8] mb-2 md:mb-0">UNIV ADMIN</div>
+      <nav>
+        <ul class="flex gap-4 text-gray-700 text-sm">
+          <li><a href="#" class="hover:text-[#5D8AA8]"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="#" class="hover:text-[#5D8AA8]"><i class="fas fa-cogs"></i> Services</a></li>
+          <li><a href="#" class="hover:text-[#5D8AA8]"><i class="fas fa-chart-bar"></i> Stats</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Service Header -->
+    <section class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+      <h1 class="text-2xl font-bold text-[#5D8AA8]">Service Scolarité</h1>
+      <div id="badge-button" class="flex items-center gap-2 bg-gray-200 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-300">
+        <i class="fas fa-award"></i> Badge Argent
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-white rounded-lg p-4 shadow hover:shadow-md cursor-help border-t-4 border-[#5D8AA8] relative">
+        <div class="text-2xl font-bold mb-1 text-[#5D8AA8]">147</div>
+        <div class="flex items-center gap-1 text-gray-600">
+          En traitement
+          <div class="w-4 h-4 border border-gray-600 rounded-full text-xs flex items-center justify-center">i</div>
+        </div>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 bg-black text-white text-xs p-2 rounded opacity-0 hover:opacity-100 transition-opacity">
+          <strong>Dossiers en cours de traitement</strong><br>
+          Nombre de demandes actuellement en cours d'instruction par le service. Inclut toutes les étapes de validation.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg p-4 shadow hover:shadow-md cursor-help border-t-4 border-yellow-400 relative">
+        <div class="text-2xl font-bold mb-1 text-yellow-400">23</div>
+        <div class="flex items-center gap-1 text-gray-600">
+          En retard
+          <div class="w-4 h-4 border border-gray-600 rounded-full text-xs flex items-center justify-center">i</div>
+        </div>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 bg-black text-white text-xs p-2 rounded opacity-0 hover:opacity-100 transition-opacity">
+          <strong>Dossiers en retard de traitement</strong><br>
+          Demandes ayant dépassé le délai de traitement standard. Ces dossiers font l'objet d'un suivi prioritaire.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg p-4 shadow hover:shadow-md cursor-help border-t-4 border-teal-400 relative">
+        <div class="text-2xl font-bold mb-1 text-teal-400">4.2j</div>
+        <div class="flex items-center gap-1 text-gray-600">
+          Délai moyen
+          <div class="w-4 h-4 border border-gray-600 rounded-full text-xs flex items-center justify-center">i</div>
+        </div>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 bg-black text-white text-xs p-2 rounded opacity-0 hover:opacity-100 transition-opacity">
+          <strong>Délai moyen de traitement</strong><br>
+          Temps moyen entre le dépôt d'une demande et sa résolution complète. Calculé sur les 30 derniers jours.
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg p-4 shadow hover:shadow-md cursor-help border-t-4 border-green-500 relative">
+        <div class="text-2xl font-bold mb-1 text-green-500">89%</div>
+        <div class="flex items-center gap-1 text-gray-600">
+          Satisfaction
+          <div class="w-4 h-4 border border-gray-600 rounded-full text-xs flex items-center justify-center">i</div>
+        </div>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-64 bg-black text-white text-xs p-2 rounded opacity-0 hover:opacity-100 transition-opacity">
+          <strong>Taux de satisfaction étudiant</strong><br>
+          Pourcentage d'étudiants satisfaits du service, basé sur les enquêtes de satisfaction menées mensuellement.
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-lg font-semibold text-[#5D8AA8] flex items-center gap-2 mb-4">
+        <i class="fas fa-chart-bar"></i> Comparaison des délais
+      </h2>
+
+      <div class="flex flex-col sm:flex-row gap-4 mb-4">
+        <select id="month-select" class="p-2 border rounded text-sm">
+          <option value="mars" selected>Mars</option>
+          <option value="fevrier">Février</option>
+          <option value="janvier">Janvier</option>
+        </select>
+
+        <select id="year-select" class="p-2 border rounded text-sm">
+          <option value="2024" selected>2024</option>
+          <option value="2023">2023</option>
+        </select>
+
+        <button id="update-chart" class="bg-[#5D8AA8] text-white px-4 py-2 rounded hover:bg-[#4A7899] text-sm">
+          <i class="fas fa-sync-alt"></i> Actualiser
+        </button>
+      </div>
+
+      <div id="comparator-chart" class="relative flex gap-2 h-52 bg-gray-200 p-2 rounded">
+        <div class="chart-tooltip absolute hidden bg-black text-white text-xs p-2 rounded z-10"></div>
+
+        <div class="bar flex-1 bg-gradient-to-t from-[#5D8AA8] to-[#4A7899] rounded-t cursor-help" style="height:70%" 
+             data-service="Scolarité" data-delai="4.2j" data-description="Gestion des relevés de notes, attestations et certificats de scolarité">
+          <div class="text-center text-xs mt-1">Scolarité<br>4.2j</div>
+        </div>
+        <div class="bar flex-1 bg-gradient-to-t from-green-500 to-green-300 rounded-t cursor-help" style="height:50%" 
+             data-service="Bourses" data-delai="3.1j" data-description="Traitement des demandes de bourses sur critères sociaux et aides financières">
+          <div class="text-center text-xs mt-1">Bourses<br>3.1j</div>
+        </div>
+        <div class="bar flex-1 bg-gradient-to-t from-yellow-400 to-yellow-200 rounded-t cursor-help" style="height:85%" 
+             data-service="Logement" data-delai="5.8j" data-description="Attribution des logements CROUS et gestion des dossiers hébergement">
+          <div class="text-center text-xs mt-1">Logement<br>5.8j</div>
+        </div>
+        <div class="bar flex-1 bg-gradient-to-t from-teal-400 to-teal-200 rounded-t cursor-help" style="height:60%" 
+             data-service="International" data-delai="3.9j" data-description="Mobilité entrante et sortante, conventions internationales">
+          <div class="text-center text-xs mt-1">International<br>3.9j</div>
+        </div>
+      </div>
+
+      <div class="mt-4 p-3 bg-gray-100 rounded text-sm border-l-4 border-[#5D8AA8]">
+        <strong>À propos de ce graphique :</strong> Chaque barre représente le délai moyen de traitement (en jours) d'un service administratif. Plus la barre est haute, plus le délai est long. Les données sont mises à jour mensuellement.
+      </div>
+    </section>
+
+    <!-- History Table -->
+    <section class="bg-white p-6 rounded-lg shadow mb-6">
+      <h2 class="text-lg font-semibold text-[#5D8AA8] mb-4"><i class="fas fa-history"></i> Historique mensuel</h2>
+      <table class="w-full border-collapse text-sm">
+        <thead class="bg-gray-200 text-[#5D8AA8] font-semibold">
+          <tr>
+            <th class="p-2 border-b">Mois</th>
+            <th class="p-2 border-b">Traités</th>
+            <th class="p-2 border-b">Délai</th>
+            <th class="p-2 border-b">Retard</th>
+            <th class="p-2 border-b">Badge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-[#F0F7FF]">
+            <td class="p-2 border-b">Mars 2024</td>
+            <td class="p-2 border-b">312</td>
+            <td class="p-2 border-b">4.2j</td>
+            <td class="p-2 border-b">23</td>
+            <td class="p-2 border-b text-yellow-600"><i class="fas fa-award"></i> Argent</td>
+          </tr>
+          <tr class="hover:bg-[#F0F7FF]">
+            <td class="p-2 border-b">Fév 2024</td>
+            <td class="p-2 border-b">298</td>
+            <td class="p-2 border-b">4.8j</td>
+            <td class="p-2 border-b">31</td>
+            <td class="p-2 border-b text-orange-600"><i class="fas fa-award"></i> Bronze</td>
+          </tr>
+          <tr class="hover:bg-[#F0F7FF]">
+            <td class="p-2 border-b">Jan 2024</td>
+            <td class="p-2 border-b">275</td>
+            <td class="p-2 border-b">5.5j</td>
+            <td class="p-2 border-b">42</td>
+            <td class="p-2 border-b text-orange-600"><i class="fas fa-award"></i> Bronze</td>
+          </tr>
+          <tr class="hover:bg-[#F0F7FF]">
+            <td class="p-2 border-b">Déc 2023</td>
+            <td class="p-2 border-b">210</td>
+            <td class="p-2 border-b">6.1j</td>
+            <td class="p-2 border-b">38</td>
+            <td class="p-2 border-b text-orange-600"><i class="fas fa-award"></i> Bronze</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Badges Modal -->
+    <div id="badges-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+      <div class="bg-white rounded-xl max-w-lg w-full shadow-lg overflow-y-auto">
+        <div class="flex justify-between items-center p-6 bg-gradient-to-r from-[#5D8AA8] to-[#4A7899] text-white rounded-t-xl">
+          <h2 class="text-xl font-semibold flex items-center gap-2"><i class="fas fa-trophy"></i> Système de Badges - Transparence</h2>
+          <button id="close-modal" class="text-2xl font-bold hover:scale-110 transition-transform">&times;</button>
+        </div>
+        <div class="p-6 space-y-6">
+          <p>Les badges récompensent les services administratifs selon leur performance en matière de transparence et de respect des délais. Chaque niveau représente un engagement croissant envers l'excellence du service.</p>
+          <div class="grid gap-4">
+            <!-- Argent -->
+            <div class="flex items-center gap-4 p-4 border rounded-lg bg-[#F0F7FF] border-[#5D8AA8] relative">
+              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-gray-300 text-gray-700 text-2xl">
+                <i class="fas fa-award"></i>
+              </div>
+              <div>
+                <div class="font-semibold text-lg">Badge Argent</div>
+                <div class="text-gray-600 text-sm">Récompense les services qui maintiennent une transparence constante et respectent plus de 75% de leurs engagements dans les délais impartis.</div>
+                <div class="text-[#5D8AA8] font-medium text-sm mt-1">✓ 75-89% des engagements respectés</div>
+              </div>
+              <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">✓ Actuel</div>
+            </div>
+            <!-- Or -->
+            <div class="flex items-center gap-4 p-4 border rounded-lg">
+              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-yellow-300 text-yellow-800 text-2xl"><i class="fas fa-crown"></i></div>
+              <div>
+                <div class="font-semibold text-lg">Badge Or</div>
+                <div class="text-gray-600 text-sm">Niveau d'excellence suprême pour les services dépassant 90% de respect des délais avec une transparence totale.</div>
+                <div class="text-yellow-700 font-medium text-sm mt-1">✓ 90%+ des engagements respectés</div>
+              </div>
+            </div>
+            <!-- Bronze -->
+            <div class="flex items-center gap-4 p-4 border rounded-lg">
+              <div class="w-16 h-16 rounded-full flex items-center justify-center bg-orange-300 text-orange-800 text-2xl"><i class="fas fa-medal"></i></div>
+              <div>
+                <div class="font-semibold text-lg">Badge Bronze</div>
+                <div class="text-gray-600 text-sm">Niveau de base pour les services qui commencent leur parcours de transparence et respectent au moins 50% de leurs engagements.</div>
+                <div class="text-orange-700 font-medium text-sm mt-1">✓ 50-74% des engagements respectés</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-gray-100 rounded-lg text-sm">
+            <strong>Votre progression :</strong> Le Service Scolarité est actuellement au niveau Argent. Pour atteindre le niveau Or, maintenez un taux de satisfaction supérieur à 90% pendant 3 mois consécutifs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Badge Modal
+    const badgeButton = document.getElementById('badge-button');
+    const modal = document.getElementById('badges-modal');
+    const closeModal = document.getElementById('close-modal');
+
+    badgeButton.addEventListener('click', () => modal.classList.remove('hidden'));
+    closeModal.addEventListener('click', () => modal.classList.add('hidden'));
+    window.addEventListener('click', (e) => { if(e.target === modal) modal.classList.add('hidden'); });
+
+    // Chart tooltip
+    const bars = document.querySelectorAll('.bar');
+    const tooltip = document.querySelector('.chart-tooltip');
+    const chartContainer = document.getElementById('comparator-chart');
+
+    bars.forEach(bar => {
+      bar.addEventListener('mouseenter', function() {
+        tooltip.innerHTML = `<strong>${this.dataset.service}</strong><br>Délai: ${this.dataset.delai}<br>${this.dataset.description}`;
+        tooltip.classList.remove('hidden');
+        const rect = this.getBoundingClientRect();
+        const chartRect = chartContainer.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + rect.width/2 - chartRect.left}px`;
+        tooltip.style.top = `${rect.top - chartRect.top - tooltip.offsetHeight - 10}px`;
+      });
+      bar.addEventListener('mouseleave', () => tooltip.classList.add('hidden'));
+      bar.addEventListener('mousemove', function() {
+        const rect = this.getBoundingClientRect();
+        const chartRect = chartContainer.getBoundingClientRect();
+        tooltip.style.left = `${rect.left + rect.width/2 - chartRect.left}px`;
+        tooltip.style.top = `${rect.top - chartRect.top - tooltip.offsetHeight - 10}px`;
+      });
+    });
+
+    // Update chart button
+    document.getElementById('update-chart').addEventListener('click', () => {
+      const month = document.getElementById('month-select').value;
+      const year = document.getElementById('year-select').value;
+      alert(`Graphique mis à jour pour ${month} ${year}`);
+    });
+  </script>
+
+</body>
+</html>

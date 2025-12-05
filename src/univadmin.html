@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Scolarité - Université</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for things Tailwind can't handle */
+        .badge-silver-modal {
+            background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
+            color: #5a5a5a;
+            border: 2px solid #a0a0a0;
+        }
+        .badge-gold {
+            background: linear-gradient(135deg, #FFD700, #FFEC8B);
+            color: #8B7500;
+            border: 2px solid #FFD700;
+        }
+        .badge-bronze {
+            background: linear-gradient(135deg, #cd7f32, #e6b17e);
+            color: #5a3a1e;
+            border: 2px solid #cd7f32;
+        }
+        .current-badge::after {
+            content: '✓ Actuel';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.625rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans leading-relaxed text-sm">
+
+<div class="container mx-auto p-4 max-w-5xl">
+
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row justify-between items-center border-b border-gray-500 mb-5 gap-2 md:gap-0">
+        <div class="text-blue-500 font-bold text-lg">UNIV ADMIN</div>
+        <nav>
+            <ul class="flex gap-4 text-gray-700 text-xs">
+                <li><a href="#" class="flex items-center gap-1 hover:text-blue-500"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#" class="flex items-center gap-1 hover:text-blue-500"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="#" class="flex items-center gap-1 hover:text-blue-500"><i class="fas fa-chart-bar"></i> Stats</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Service Header -->
+    <section class="flex flex-col md:flex-row justify-between items-center mb-5 gap-2 md:gap-0">
+        <h1 class="text-blue-500 text-xl font-bold">Service Scolarité</h1>
+        <div class="badge badge-silver cursor-pointer inline-flex items-center gap-2 px-3 py-1 rounded-full hover:-translate-y-0.5 transition-transform" onclick="openBadgesModal()">
+            <i class="fas fa-award text-sm"></i> Badge Argent
+        </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+        <div class="stat-card relative bg-white p-4 rounded border border-gray-300 shadow hover:-translate-y-0.5 hover:shadow-md cursor-help border-t-4 border-blue-500">
+            <div class="text-xl font-bold text-blue-500 mb-1">147</div>
+            <div class="flex justify-center items-center gap-1 text-xs text-gray-700">En traitement <div class="w-3.5 h-3.5 border border-gray-700 rounded-full text-[10px] flex items-center justify-center">i</div></div>
+            <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md w-48">
+                <strong>Dossiers en cours de traitement</strong><br>
+                Nombre de demandes actuellement en cours d'instruction par le service. Inclut toutes les étapes de validation.
+            </div>
+        </div>
+
+        <div class="stat-card relative bg-white p-4 rounded border border-gray-300 shadow hover:-translate-y-0.5 hover:shadow-md cursor-help border-t-4 border-yellow-400">
+            <div class="text-xl font-bold text-yellow-400 mb-1">23</div>
+            <div class="flex justify-center items-center gap-1 text-xs text-gray-700">En retard <div class="w-3.5 h-3.5 border border-gray-700 rounded-full text-[10px] flex items-center justify-center">i</div></div>
+            <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md w-48">
+                <strong>Dossiers en retard de traitement</strong><br>
+                Demandes ayant dépassé le délai de traitement standard. Ces dossiers font l'objet d'un suivi prioritaire.
+            </div>
+        </div>
+
+        <div class="stat-card relative bg-white p-4 rounded border border-gray-300 shadow hover:-translate-y-0.5 hover:shadow-md cursor-help border-t-4 border-teal-500">
+            <div class="text-xl font-bold text-teal-500 mb-1">4.2j</div>
+            <div class="flex justify-center items-center gap-1 text-xs text-gray-700">Délai moyen <div class="w-3.5 h-3.5 border border-gray-700 rounded-full text-[10px] flex items-center justify-center">i</div></div>
+            <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md w-48">
+                <strong>Délai moyen de traitement</strong><br>
+                Temps moyen entre le dépôt d'une demande et sa résolution complète. Calculé sur les 30 derniers jours.
+            </div>
+        </div>
+
+        <div class="stat-card relative bg-white p-4 rounded border border-gray-300 shadow hover:-translate-y-0.5 hover:shadow-md cursor-help border-t-4 border-green-500">
+            <div class="text-xl font-bold text-green-500 mb-1">89%</div>
+            <div class="flex justify-center items-center gap-1 text-xs text-gray-700">Satisfaction <div class="w-3.5 h-3.5 border border-gray-700 rounded-full text-[10px] flex items-center justify-center">i</div></div>
+            <div class="tooltip absolute bottom-full left-1/2 -translate-x-1/2 bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md w-48">
+                <strong>Taux de satisfaction étudiant</strong><br>
+                Pourcentage d'étudiants satisfaits du service, basé sur les enquêtes de satisfaction menées mensuellement.
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparaison des délais -->
+    <section class="bg-white p-4 rounded border border-gray-300 shadow mb-6">
+        <h2 class="section-title flex items-center gap-2 text-blue-500 font-semibold mb-3"><i class="fas fa-chart-bar"></i> Comparaison des délais
+            <div class="info-icon w-3.5 h-3.5 border border-gray-700 rounded-full text-[10px] flex items-center justify-center cursor-help">i</div>
+        </h2>
+        <div class="tooltip absolute bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md w-48">
+            <strong>Comparateur de délais entre services</strong><br>
+            Ce graphique compare les délais moyens de traitement entre les différents services administratifs de l'université.
+        </div>
+
+        <div class="flex gap-2 flex-wrap mb-3">
+            <select id="month-select" class="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <option value="mars" selected>Mars</option>
+                <option value="fevrier">Février</option>
+                <option value="janvier">Janvier</option>
+            </select>
+            <select id="year-select" class="px-2 py-1 border border-gray-300 rounded text-xs focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <option value="2024" selected>2024</option>
+                <option value="2023">2023</option>
+            </select>
+            <button id="update-chart" class="px-2 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-700"><i class="fas fa-sync-alt"></i> Actualiser</button>
+        </div>
+
+        <div id="comparator-chart" class="relative flex items-end gap-1 bg-gray-200 border border-gray-300 rounded h-48 p-2">
+            <div id="chart-tooltip" class="chart-tooltip absolute bg-black text-white text-xs p-2 rounded opacity-0 invisible transition-opacity shadow-md"></div>
+            <div class="bar flex-1 rounded-t" style="height:70%; background:linear-gradient(to top, #3498db, #5dade2);" data-service="Scolarité" data-delai="4.2j" data-description="Gestion des relevés de notes, attestations et certificats de scolarité">
+                <div class="text-center text-[10px] font-medium">Scolarité<br>4.2j</div>
+            </div>
+            <div class="bar flex-1 rounded-t" style="height:50%; background:linear-gradient(to top, #28a745, #58d68d);" data-service="Bourses" data-delai="3.1j" data-description="Traitement des demandes de bourses sur critères sociaux et aides financières">
+                <div class="text-center text-[10px] font-medium">Bourses<br>3.1j</div>
+            </div>
+            <div class="bar flex-1 rounded-t" style="height:85%; background:linear-gradient(to top, #ffc107, #f7dc6f);" data-service="Logement" data-delai="5.8j" data-description="Attribution des logements CROUS et gestion des dossiers hébergement">
+                <div class="text-center text-[10px] font-medium">Logement<br>5.8j</div>
+            </div>
+            <div class="bar flex-1 rounded-t" style="height:60%; background:linear-gradient(to top, #17a2b8, #7fb3d5);" data-service="International" data-delai="3.9j" data-description="Mobilité entrante et sortante, conventions internationales">
+                <div class="text-center text-[10px] font-medium">International<br>3.9j</div>
+            </div>
+        </div>
+        <div class="mt-2 p-2 bg-gray-200 border-l-4 border-blue-500 text-xs rounded">
+            <strong>À propos de ce graphique :</strong> Chaque barre représente le délai moyen de traitement (en jours) d'un service administratif.
+        </div>
+    </section>
+
+    <!-- Historique mensuel -->
+    <section class="bg-white p-4 rounded border border-gray-300 shadow mb-6">
+        <h2 class="flex items-center gap-2 text-blue-500 font-semibold mb-3"><i class="fas fa-history"></i> Historique mensuel</h2>
+        <table class="w-full border-collapse text-xs">
+            <thead>
+                <tr class="bg-gray-200 text-blue-500 font-semibold">
+                    <th class="p-2 border-b border-gray-300">Mois</th>
+                    <th class="p-2 border-b border-gray-300">Traités</th>
+                    <th class="p-2 border-b border-gray-300">Délai</th>
+                    <th class="p-2 border-b border-gray-300">Retard</th>
+                    <th class="p-2 border-b border-gray-300">Badge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-blue-100">
+                    <td class="p-2 border-b border-gray-300">Mars 2024</td>
+                    <td class="p-2 border-b border-gray-300">312</td>
+                    <td class="p-2 border-b border-gray-300">4.2j</td>
+                    <td class="p-2 border-b border-gray-300">23</td>
+                    <td class="p-2 border-b border-gray-300"><i class="fas fa-award text-gray-400"></i> Argent</td>
+                </tr>
+                <tr class="hover:bg-blue-100">
+                    <td class="p-2 border-b border-gray-300">Fév 2024</td>
+                    <td class="p-2 border-b border-gray-300">298</td>
+                    <td class="p-2 border-b border-gray-300">4.8j</td>
+                    <td class="p-2 border-b border-gray-300">31</td>
+                    <td class="p-2 border-b border-gray-300"><i class="fas fa-award text-[#cd7f32]"></i> Bronze</td>
+                </tr>
+                <tr class="hover:bg-blue-100">
+                    <td class="p-2 border-b border-gray-300">Jan 2024</td>
+                    <td class="p-2 border-b border-gray-300">275</td>
+                    <td class="p-2 border-b border-gray-300">5.5j</td>
+                    <td class="p-2 border-b border-gray-300">42</td>
+                    <td class="p-2 border-b border-gray-300"><i class="fas fa-award text-[#cd7f32]"></i> Bronze</td>
+                </tr>
+                <tr class="hover:bg-blue-100">
+                    <td class="p-2 border-b border-gray-300">Déc 2023</td>
+                    <td class="p-2 border-b border-gray-300">210</td>
+                    <td class="p-2 border-b border-gray-300">6.1j</td>
+                    <td class="p-2 border-b border-gray-300">38</td>
+                    <td class="p-2 border-b border-gray-300"><i class="fas fa-award text-[#cd7f32]"></i> Bronze</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Modal des badges -->
+    <div id="badges-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="modal-content bg-white rounded-xl w-11/12 max-w-lg max-h-[90vh] overflow-y-auto shadow-xl">
+            <div class="modal-header flex justify-between items-center bg-gradient-to-br from-blue-500 to-blue-700 text-white p-5 rounded-t-xl border-b border-gray-300">
+                <h2 class="modal-title flex items-center gap-2 text-xl font-semibold"><i class="fas fa-trophy"></i> Système de Badges - Transparence</h2>
+                <button class="close-modal text-white text-2xl" onclick="closeBadgesModal()">&times;</button>
+            </div>
+            <div class="modal-body p-5">
+                <p>Les badges récompensent les services administratifs selon leur performance en matière de transparence et de respect des délais. Chaque niveau représente un engagement croissant envers l'excellence du service.</p>
+                <div class="grid gap-5 mt-5">
+                    <div class="badge-item relative current-badge flex items-start gap-4 p-4 border border-gray-300 rounded hover:-translate-y-0.5 hover:shadow-md">
+                        <div class="badge-visual badge-silver-modal w-14 h-14 flex items-center justify-center text-xl rounded-full">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="badge-info flex-1">
+                            <div class="badge-name font-semibold text-base">Badge Argent</div>
+                            <div class="badge-description text-gray-700 text-sm mt-1">Récompense les services qui maintiennent une transparence constante et respectent plus de 75% de leurs engagements dans les délais impartis.</div>
+                            <div class="badge-criteria text-blue-500 font-medium text-xs mt-1">✓ 75-89% des engagements respectés</div>
+                        </div>
+                    </div>
+
+                    <div class="badge-item flex items-start gap-4 p-4 border border-gray-300 rounded hover:-translate-y-0.5 hover:shadow-md">
+                        <div class="badge-visual badge-gold w-14 h-14 flex items-center justify-center text-xl rounded-full">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="badge-info flex-1">
+                            <div class="badge-name font-semibold text-base">Badge Or</div>
+                            <div class="badge-description text-gray-700 text-sm mt-1">Niveau d'excellence suprême pour les services dépassant 90% de respect des délais avec une transparence totale.</div>
+                            <div class="badge-criteria text-blue-500 font-medium text-xs mt-1">✓ 90%+ des engagements respectés</div>
+                        </div>
+                    </div>
+
+                    <div class="badge-item flex items-start gap-4 p-4 border border-gray-300 rounded hover:-translate-y-0.5 hover:shadow-md">
+                        <div class="badge-visual badge-bronze w-14 h-14 flex items-center justify-center text-xl rounded-full">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="badge-info flex-1">
+                            <div class="badge-name font-semibold text-base">Badge Bronze</div>
+                            <div class="badge-description text-gray-700 text-sm mt-1">Attribué aux services qui respectent au moins 50% de leurs engagements tout en améliorant leur performance globale.</div>
+                            <div class="badge-criteria text-blue-500 font-medium text-xs mt-1">✓ 50-74% des engagements respectés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Modal control
+    function openBadgesModal() {
+        document.getElementById('badges-modal').classList.remove('hidden');
+        document.getElementById('badges-modal').classList.add('flex');
+    }
+
+    function closeBadgesModal() {
+        document.getElementById('badges-modal').classList.add('hidden');
+        document.getElementById('badges-modal').classList.remove('flex');
+    }
+
+    // Chart update
+    document.getElementById('update-chart').addEventListener('click', function() {
+        const month = document.getElementById('month-select').value;
+        const year = document.getElementById('year-select').value;
+        alert(`Graphique mis à jour pour ${month} ${year}`);
+    });
+
+    // Tooltip hover
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.querySelector('.tooltip').classList.remove('opacity-0','invisible');
+        });
+        card.addEventListener('mouseleave', () => {
+            card.querySelector('.tooltip').classList.add('opacity-0','invisible');
+        });
+    });
+
+    // Chart bar tooltip
+    document.querySelectorAll('#comparator-chart .bar').forEach(bar => {
+        bar.addEventListener('mouseenter', (e) => {
+            const tooltip = document.getElementById('chart-tooltip');
+            tooltip.innerHTML = `<strong>${bar.dataset.service}</strong><br>Délai moyen: ${bar.dataset.delai}<br>${bar.dataset.description}`;
+            tooltip.classList.remove('opacity-0','invisible');
+            tooltip.style.left = e.target.offsetLeft + 'px';
+            tooltip.style.top = (e.target.offsetTop - 60) + 'px';
+        });
+        bar.addEventListener('mouseleave', () => {
+            const tooltip = document.getElementById('chart-tooltip');
+            tooltip.classList.add('opacity-0','invisible');
+        });
+    });
+</script>
+
+</body>
+</html>

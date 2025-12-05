@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Demandes - Université</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-main': '#BEE1E6', // Bleu principal
+                        'custom-accent': '#006D77', // Vert/Teal foncé pour les boutons
+                        'custom-dark-text': '#2A363B', // Un gris foncé pour le texte principal (alternative au #0d2d5a)
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+<div class="max-w-7xl mx-auto p-5">
+
+    <header class="flex justify-between items-center p-5 mb-6 rounded-lg bg-custom-main text-custom-dark-text shadow-lg border-b-2 border-custom-accent">
+        <div class="text-xl font-bold flex items-center gap-2">
+            UNIVERSITÉ ADMIN
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="hidden md:inline">Étudiant: Jean Dupont</span>
+            <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center font-bold text-white">JD</div>
+        </div>
+    </header>
+
+    <div class="flex border-b border-gray-300 bg-white rounded-lg shadow-sm p-0.5 mb-6">
+        <div class="tab active border-b-4 border-custom-accent font-semibold text-custom-accent px-6 py-3 cursor-pointer">Mes Demandes</div>
+        <div class="tab text-gray-600 hover:text-custom-accent hover:bg-custom-main px-6 py-3 cursor-pointer">Historique</div>
+        <div class="tab text-gray-600 hover:text-custom-accent hover:bg-custom-main px-6 py-3 cursor-pointer">Nouvelle Demande</div>
+    </div>
+
+    <section>
+        <div class="flex justify-between items-center mb-5 text-custom-accent font-semibold text-lg">
+            <h2>Mes Demandes en Cours</h2>
+            <span>4 demandes</span>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+            <div class="bg-white rounded-lg shadow border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-transform">
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-custom-main/50">
+                    <div class="font-semibold text-custom-accent">Relevé de notes</div>
+                    <div class="text-sm px-3 py-1 rounded-full bg-teal-100 text-teal-800 border border-teal-200">Approuvé</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-600 mb-2">Déposé le: 15/03/2024</div>
+                    <div class="text-sm mb-4">Demande de relevé de notes officiel pour semestre 2023-2024.</div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs text-gray-600 mb-1">
+                            <span>Progression</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="h-1 bg-gray-300 rounded">
+                            <div class="h-1 bg-gradient-to-r from-custom-accent to-custom-main" style="width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="px-4 py-2 rounded bg-custom-accent text-white hover:bg-[#1C8D99] hover:shadow-md transition" onclick="showTimeline('releve')">Voir le suivi</button>
+                        <button class="px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition">Télécharger</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-transform">
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-custom-main/50">
+                    <div class="font-semibold text-custom-accent">Attestation de présence</div>
+                    <div class="text-sm px-3 py-1 rounded-full bg-green-100 text-green-800 border border-green-200">En traitement</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-600 mb-2">Déposé le: 22/03/2024</div>
+                    <div class="text-sm mb-4">Attestation d'assiduité pour l'année universitaire 2023-2024.</div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs text-gray-600 mb-1">
+                            <span>Progression</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="h-1 bg-gray-300 rounded">
+                            <div class="h-1 bg-gradient-to-r from-custom-accent to-custom-main" style="width:60%"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="px-4 py-2 rounded bg-custom-accent text-white hover:bg-[#1C8D99] hover:shadow-md transition" onclick="showTimeline('presence')">Voir le suivi</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-transform">
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-custom-main/50">
+                    <div class="font-semibold text-custom-accent">Demande de bourse</div>
+                    <div class="text-sm px-3 py-1 rounded-full bg-red-100 text-red-800 border border-red-200">Refusée</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-600 mb-2">Déposé le: 10/02/2024</div>
+                    <div class="text-sm mb-4">Demande de bourse sur critères sociaux pour l'année 2024-2025.</div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs text-gray-600 mb-1">
+                            <span>Progression</span>
+                            <span>100%</span>
+                        </div>
+                        <div class="h-1 bg-gray-300 rounded">
+                            <div class="h-1 bg-gradient-to-r from-custom-accent to-custom-main" style="width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="px-4 py-2 rounded bg-custom-accent text-white hover:bg-[#1C8D99] hover:shadow-md transition" onclick="showTimeline('bourse')">Voir le suivi</button>
+                        <button class="px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition" onclick="showBlackBox()">Boîte noire</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-transform">
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-custom-main/50">
+                    <div class="font-semibold text-custom-accent">Certificat de scolarité</div>
+                    <div class="text-sm px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 border border-yellow-200">En attente</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-600 mb-2">Déposé le: 05/04/2024</div>
+                    <div class="text-sm mb-4">Certificat de scolarité pour l'obtention d'un logement CROUS.</div>
+                    <div class="mb-4">
+                        <div class="flex justify-between text-xs text-gray-600 mb-1">
+                            <span>Progression</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="h-1 bg-gray-300 rounded">
+                            <div class="h-1 bg-gradient-to-r from-custom-accent to-custom-main" style="width:20%"></div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="px-4 py-2 rounded bg-custom-accent text-white hover:bg-[#1C8D99] hover:shadow-md transition" onclick="showTimeline('certificat')">Voir le suivi</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="timeline-releve" class="timeline-container hidden mt-10 p-5 bg-white rounded-lg shadow border border-gray-200">
+        <h3 class="font-semibold text-custom-accent mb-4">Timeline: Relevé de notes</h3>
+        <ul class="relative border-l-2 border-custom-accent ml-4">
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-custom-accent rounded-full"></span>
+                <p class="text-sm text-gray-600">Demande déposée - 15/03/2024</p>
+            </li>
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-custom-accent rounded-full"></span>
+                <p class="text-sm text-gray-600">Validation administration - 17/03/2024</p>
+            </li>
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-custom-accent rounded-full"></span>
+                <p class="text-sm text-gray-600">Relevé disponible - 20/03/2024</p>
+            </li>
+        </ul>
+        <button class="mt-4 px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition" onclick="hideTimeline('releve')">Fermer</button>
+    </div>
+
+    <div id="timeline-presence" class="timeline-container hidden mt-10 p-5 bg-white rounded-lg shadow border border-gray-200">
+        <h3 class="font-semibold text-custom-accent mb-4">Timeline: Attestation de présence</h3>
+        <ul class="relative border-l-2 border-green-600 ml-4">
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-green-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">Demande déposée - 22/03/2024</p>
+            </li>
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-green-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">En traitement par le service - 23/03/2024</p>
+            </li>
+        </ul>
+        <button class="mt-4 px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition" onclick="hideTimeline('presence')">Fermer</button>
+    </div>
+
+    <div id="timeline-bourse" class="timeline-container hidden mt-10 p-5 bg-white rounded-lg shadow border border-gray-200">
+        <h3 class="font-semibold text-custom-accent mb-4">Timeline: Demande de bourse</h3>
+        <ul class="relative border-l-2 border-red-600 ml-4">
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-red-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">Demande déposée - 10/02/2024</p>
+            </li>
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-red-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">Rejetée par le service social - 20/02/2024</p>
+            </li>
+        </ul>
+        <button class="mt-4 px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition" onclick="hideTimeline('bourse')">Fermer</button>
+    </div>
+
+    <div id="timeline-certificat" class="timeline-container hidden mt-10 p-5 bg-white rounded-lg shadow border border-gray-200">
+        <h3 class="font-semibold text-custom-accent mb-4">Timeline: Certificat de scolarité</h3>
+        <ul class="relative border-l-2 border-yellow-600 ml-4">
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-yellow-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">Demande déposée - 05/04/2024</p>
+            </li>
+            <li class="mb-6 ml-6">
+                <span class="absolute -left-4 w-4 h-4 bg-yellow-600 rounded-full"></span>
+                <p class="text-sm text-gray-600">En attente validation - 06/04/2024</p>
+            </li>
+        </ul>
+        <button class="mt-4 px-4 py-2 rounded border border-gray-700 hover:bg-gray-100 transition" onclick="hideTimeline('certificat')">Fermer</button>
+    </div>
+
+    <div id="black-box" class="hidden mt-10 p-5 bg-gray-900 text-white rounded-lg shadow border border-gray-800">
+        <h3 class="font-semibold text-yellow-400 mb-4">Boîte noire: Logs de la demande de bourse</h3>
+        <ul class="text-xs font-mono space-y-2">
+            <li>[10/02/2024 09:15] - Demande déposée par l'étudiant</li>
+            <li>[10/02/2024 10:20] - Vérification des documents</li>
+            <li>[11/02/2024 14:05] - Notification envoyée au service social</li>
+            <li>[20/02/2024 16:30] - Rejetée par le service social</li>
+        </ul>
+        <button class="mt-4 px-4 py-2 rounded border border-gray-700 hover:bg-gray-800 transition" onclick="hideBlackBox()">Fermer</button>
+    </div>
+
+</div>
+
+<script>
+    function showTimeline(requestType) {
+        document.querySelectorAll('.timeline-container').forEach(el => el.classList.add('hidden'));
+        document.getElementById('black-box')?.classList.add('hidden');
+        const timeline = document.getElementById('timeline-' + requestType);
+        if (timeline) {
+            timeline.classList.remove('hidden');
+            timeline.scrollIntoView({behavior:'smooth'});
+        }
+    }
+
+    function hideTimeline(requestType) {
+        const timeline = document.getElementById('timeline-' + requestType);
+        if (timeline) timeline.classList.add('hidden');
+    }
+
+    function showBlackBox() {
+        document.querySelectorAll('.timeline-container').forEach(el => el.classList.add('hidden'));
+        const box = document.getElementById('black-box');
+        if (box) {
+            box.classList.remove('hidden');
+            box.scrollIntoView({behavior:'smooth'});
+        }
+    }
+
+    function hideBlackBox() {
+        const box = document.getElementById('black-box');
+        if (box) box.classList.add('hidden');
+    }
+
+
+    document.querySelectorAll('.tab').forEach(tab=>{
+        tab.addEventListener('click', function(){
+            document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
